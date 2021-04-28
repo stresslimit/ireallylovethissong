@@ -1,0 +1,30 @@
+body, html{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+#___gatsby,
+#gatsby-focus-wrapper{
+  width: 100%;
+  height: 100%;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  padding: 2rem;
+}
+div{
+  width: 100%;
+}
+#gatsby-focus-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo{
+  max-width: 600px;
+  width: 100%;
+}
