@@ -1,0 +1,114 @@
+#tv{
+  position: relative;
+  width: 100%;
+  height: 350px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  iframe{
+    width: 100%;
+    height: 100%;
+    display: none;
+    &.active{
+      display:block;
+    }
+  }
+  .transition{
+    position: absolute;
+    width: 100%;
+    height: 248px;
+    background-color: #222020;
+    background-image: url('../../../static/tenor.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0;
+    transition: opacity .5s;
+    display: none;
+    top: 0;
+    left: 0;
+    &.active{
+      opacity: 1;
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 700px) and (orientation: landscape) { 
+  #tv{
+    .transition{
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 700px) and (orientation: landscape) { 
+  #tv{
+    height: 100%;
+  }
+}
+
+.landing{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logo{
+    width: 100%;
+    max-width: 200px;
+  }
+}
+.mosaic{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  button{
+    position: absolute;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    box-shadow: 0px 35px 42px 0px #00000040;
+  }
+  img{
+    width: 200px;
+  }
+}
+.bottom-nav{
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  padding: 16px;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  color:#F9F9F9;
+  align-items: center;
+  .infos{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .image{
+    padding-right: 1rem;
+  }
+  img{
+    width: 100px;
+    height: 50px;
+  }
+  .category-name{
+
+  }
+  .video-title{
+    font-weight: bold;
+  }
+}
