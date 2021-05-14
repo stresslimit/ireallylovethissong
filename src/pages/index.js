@@ -33,12 +33,12 @@ const Home = () => {
 
       <section className="sponsor">
         <div className="container">
-          <h2>GeGet your front row seat (free) ticketst</h2>
+          <h2>GeGet your front row seat (free) tickets</h2>
           <p>First 100 to sign up to this event will receive a special gift from our partners at <img src="logo_runa.png" /></p>
         </div>
       </section>
 
-      <section className="form">
+      {/* <section className="form">
         <div className="container">
           <h2>Sign up</h2>
           <form>
@@ -73,7 +73,7 @@ const Home = () => {
           </form>
           <img src="logo_long.png" />
         </div>
-      </section>
+      </section> */}
 
 
       <section className="bottom">
