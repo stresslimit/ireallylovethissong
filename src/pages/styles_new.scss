@@ -27,6 +27,9 @@ p{
   font-size: 1.5rem;
   line-height: 3rem;
 }
+img {
+  max-width: 100%;
+}
 #___gatsby,
 #gatsby-focus-wrapper{
   width: 100%;
@@ -44,7 +47,7 @@ ul, li{
   width: 100%;
 }
 
-@media (min-width: 700px) and (orientation: landscape) { 
+@media (min-width: 700px) and (orientation: landscape) {
   .logo-tv{
     // background: url('../../static/logo_video.png') 0 0 no-repeat;
     width: 95px;
@@ -90,7 +93,7 @@ ul, li{
   }
 }
 
-@media (min-width: 700px) and (orientation: landscape) { 
+@media (min-width: 700px) and (orientation: landscape) {
   .about{
     padding: 180px 0;
     .all-of-the-above{
@@ -132,7 +135,7 @@ ul, li{
   }
 }
 
-@media (min-width: 700px) and (orientation: landscape) { 
+@media (min-width: 700px) and (orientation: landscape) {
   .mother-nature{
     position:relative;
     color:black;
@@ -164,7 +167,7 @@ ul, li{
       position: absolute;
       display: flex;
       align-items: center;
-      z-index: 10; 
+      z-index: 10;
       top: 30%;
       right: 4%;
       div{
@@ -213,7 +216,7 @@ ul, li{
   }
 }
 
-@media (min-width: 700px) and (orientation: landscape) { 
+@media (min-width: 700px) and (orientation: landscape) {
   .why{
     background-color: black;
     padding: 100px 0;
@@ -275,7 +278,7 @@ ul, li{
   }
 }
 
-@media (min-width: 700px) and (orientation: landscape) { 
+@media (min-width: 700px) and (orientation: landscape) {
   input[type=email],
   input[type=submit]{
     margin-top: 0;

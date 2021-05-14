@@ -24,6 +24,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+
       <section className="event">
         <div className="heart" />
         <div className="launch-date">
@@ -31,16 +33,27 @@ const Home = () => {
         </div>
       </section>
 
+
       <section className="sponsor">
         <div className="container">
-          <h2>GeGet your front row seat (free) tickets</h2>
-          <p>First 100 to sign up to this event will receive a special gift from our partners at <img src="logo_runa.png" /></p>
+
+          <p><img src="IRLTS_presented_powered_logos_white.png" /></p>
+
+          <br/>
+          <br/>
+          <p>RUNA is a clean energy drink that sources exclusively from farming families that grow guayusa (gwhy-you-sa) in sustainable, biodiverse forest gardens in the Amazon rainforest. Runa means “Fully Alive,” and is dedicated to bringing our good energy to life through action and through our products. RUNA provides a sustainable regenerative system for the communities that live, work and protect the rainforest. They use only natural ingredients certified by USDA Organic, Fair Trade™, and B-Corp.</p>
+
         </div>
       </section>
 
-      {/* <section className="form">
+
+       <section className="form">
         <div className="container">
-          <h2>Sign up</h2>
+          <h2>Sign up for front row seat (free) tickets</h2>
+          <p>First 100 to sign up to this event will receive a ton of cool shit curated by Slow&nbsp;Factory&nbsp;and&nbsp;RUNA</p>
+          <br/>
+          <br/>
+
           <form>
             <div className="row">
               <div className="field">
@@ -71,13 +84,13 @@ const Home = () => {
             </div>
             <button type="submit">Submit</button>
           </form>
-          <img src="logo_long.png" />
+          <img src="IRLTS_Logo_Lockup_Logos_Black.png" />
         </div>
-      </section> */}
+      </section>
 
 
       <section className="bottom">
-        Press inquiries: <a href="mailto:press@ireallylovethissong.com">press@ireallylovethissong.com</a> 
+        Press inquiries: <a href="mailto:press@ireallylovethissong.com">press@ireallylovethissong.com</a>
         <strong>A public service</strong>
         Climate & Culture
       </section>
