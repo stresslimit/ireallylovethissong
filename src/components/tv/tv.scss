@@ -64,11 +64,20 @@
     max-width: 200px;
   }
 }
+
+.center-logo{
+  z-index: 10;
+  max-width:500px;
+}
+
 .mosaic{
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 92%;
+  top:0;
+  left: 0;
   button{
+    cursor: pointer;
     position: absolute;
     border: 0;
     padding: 0;
@@ -86,7 +95,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 64px;
+  height: 8%;
   padding: 16px;
   background: black;
   display: flex;
@@ -110,5 +119,15 @@
   }
   .video-title{
     font-weight: bold;
+  }
+}
+
+.actions{
+  button{
+    background-color: transparent;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
   }
 }

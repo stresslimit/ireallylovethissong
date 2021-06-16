@@ -25,6 +25,28 @@
     cursor: pointer;
     color: #B1B1B2;
     letter-spacing: 2px;
+    .arrow{
+      border: 0;
+      width: 10px;
+      height: 20px;
+      cursor: pointer;
+      img{
+
+      width: 10px;
+      height: 20px;
+      }
+    }
+    .close{
+      img{
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .category-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
   }
   .items{
     padding: .5rem 0 0;
