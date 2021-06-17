@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import videos from '../tv/data';
+import * as FirestoreService from '../../pages/firestoreService';
 import { CATEGORIES, CATEGORIES_IDS } from '../constants';
 import arrowIcon from '../../../static/icon-arrow.svg';
 import './playlist.scss';
@@ -15,22 +15,29 @@ export default (props) => {
   }
 
   const [isOpenCloseRows, setIsOpenCloseRows] = useState([]);
+  const [videos, setVideos] = useState([]);
       
   useEffect(() => {
-    const result = CATEGORIES_IDS.map(() => {
-      return { isOpen: false };
+    const result = CATEGORIES_IDS.map((item, index) => {
+      return { isOpen: index === 0 ? true : false };
     });
     setIsOpenCloseRows(result);
+
+    FirestoreService.getVideos()
+    .then(querySnapshot => {
+      let result = []
+      querySnapshot.forEach(x => {
+        result.push(x.data())
+      })
+      setVideos(result);
+    })
+    .catch(() => {});
   }, []);
 
   const onClickToggleOpen = (index) => {
-    // console.log('asdf', index)
     const new_isOpenCloseRows = [...isOpenCloseRows]
-  console.log('=====',isOpenCloseRows)
-
     new_isOpenCloseRows[index].isOpen = !new_isOpenCloseRows[index].isOpen;
     setIsOpenCloseRows(new_isOpenCloseRows);
-    // console.log(isOpenCloseRows)
   }
 
   if (!isOpenCloseRows.length) {
@@ -54,13 +61,13 @@ export default (props) => {
                 </div>
                 {isOpen && (
                   <ul className="items">
-                    {videos.filter(item => item.categoryId === ID).map((item, index2) => (
+                    {videos.filter(item => item.prompt === ID).map((item, index2) => (
                       <li
                         key={index2}
                         onClick={() => onClickVideo(item)}
                       >
                         <img
-                          src={item.image}
+                          src={`https://img.youtube.com/vi/${item.videoId}/1.jpg`}
                         />
                         <div className="title">
                           {item.author ? item.author : ''}

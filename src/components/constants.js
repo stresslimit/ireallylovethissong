@@ -59,9 +59,9 @@ export const CATEGORIES = {
   category20: {
     name: "Archive your community with sounds and visuals ", 
   },
-  // category: {
-  //   name: "Show us what we are made of", 
-  // },
+  showus: {
+    name: "Show us what we are made of", 
+  },
   // category: {
   //   name: "Your favorite song sang to you by your mother / grandmother", 
   // },
@@ -153,5 +153,5 @@ export const CATEGORIES = {
 
 export const CATEGORIES_IDS = [
   'adayinyourlife', 'whatareyou', 'signus', 'lectureus', 'danceyour', 'howdoesitfeel', 'showussomething', 'takeinventory', 'teachus', 'lectureme',
-  'category11', 'category12', 'category13', 'category14', 'category15', 'category16', 'category17', 'category18', 'category19', 'category20',
+  'category11', 'category12', 'category13', 'category14', 'category15', 'category16', 'category17', 'category18', 'category19', 'category20', 'showus',
 ]

@@ -20,11 +20,10 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     cursor: pointer;
     color: #B1B1B2;
-    letter-spacing: 2px;
+    letter-spacing: .5px;
     .arrow{
       border: 0;
       width: 10px;
@@ -43,9 +42,7 @@
     }
   }
   .category-name{
-    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     width: 90%;
   }
   .items{

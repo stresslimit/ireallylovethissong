@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import videos from './data';
+import * as FirestoreService from '../../pages/firestoreService';
 import Playlist from '../playlist';
 import logoSrc from '../../../static/IRLTS_main_logo.png';
 import { CATEGORIES } from '../constants';
@@ -54,8 +54,7 @@ const Tv = () => {
     }, 1500);
   }
 
-  const getImageArray = () => {
-
+  const getImageArray = (videos) => {
     const tileWidth =  210;
     const tileHeight = 120;
     const viewPortWidth = document.documentElement.clientWidth;
@@ -76,7 +75,6 @@ const Tv = () => {
       .map((a) => ({sort: Math.random(), value: a}))
       .sort((a, b) => a.sort - b.sort)
       .map((a) => a.value)
-
 
     const getRandomInt = (max) => {
       return Math.floor(Math.random() * max);
@@ -117,7 +115,33 @@ const Tv = () => {
       setIsTransition(false);
       setToggleVideo(true);
     }, 1500);
-    setImageArray(getImageArray());
+
+    FirestoreService.getVideos()
+      .then(querySnapshot => {
+        let result = []
+        console.log('querySnapshot', querySnapshot)
+
+        querySnapshot.forEach(x => {
+          result.push(x.data())
+          console.log(x.id, " => ", x.data());
+        })
+        console.log('result', result)
+        // setCompanies(result)
+        setImageArray(getImageArray(result));
+      })
+      .catch(() => {});
+
+    // FirestoreService.getVideos()
+    //   .then(docs => {
+    //     console.log('===',docs)
+    //     Object.keys(docs).forEach((doc) => {
+    //         console.log(doc.id, " => ", doc.data());
+    //         setImageArray(getImageArray(doc.data()));
+    //     });
+    //   })
+    //   .catch(reason => {
+    //     console.log(reason)
+    //   });
   }, []);
 
   const onClickOpenPlaylist = () => {
@@ -141,13 +165,12 @@ const Tv = () => {
                 }}
                 onClick={() => onClickVideo(item)}
               >
-                {item.image && (
+                {item.videoId && (
                   <img
                     alt={`Thumbnail of the video from ${item.author}`}
-                    src={item.image}
+                    src={`https://img.youtube.com/vi/${item.videoId}/1.jpg`}
                   />
                 )}
-                
               </button>
             ))}
           </div>

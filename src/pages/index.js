@@ -1,11 +1,49 @@
 import React from "react"
+import { Formik } from 'formik';
+import emailjs from "emailjs-com"
 import Tv from '../components/tv';
 import { CATEGORIES, CATEGORIES_IDS } from '../components/constants';
+import * as FirestoreService from './firestoreService';
 import './styles.scss';
 
-// const list_id = 'MUIEAExWpwqxf_uw0T3adGQF4dZAYYXQCh7OWlToSlL_tOerr9Uq-e_jaO-oP5EToicb4EghZfqf_3FwJCA8qearFySrjxdjDxHuCPStvEQH6SkDI7hVC2gdBSDA7uA3dwUaEYUUthY8kb_1FAN8U_ACf6v1GxfKg0dEqcHs9zi1cWORJnDLGFDNcxA50xX2xsI_QvDzCoCPw0-d';
-
 const Home = () => {
+  const sendEmail = (values, id) => {
+    const templateParams = {
+      from_name: 'Slow Factory',
+      to_name: 'you',
+      subject: 'subject',
+      message: `Video link: ${values.url},
+        Firebase new entry link: https://console.firebase.google.com/u/0/project/i-really-love-this-song/firestore/data/~2Fvideos~2F${id}
+      `,
+    }
+
+    emailjs.send(
+      'service_8znwq5p',
+      'template_82lc1pj',
+      templateParams,
+      'user_ZhAiL6q9oUY9NIq56na11'
+    ).then(
+        result => {
+          // console.log(result.text)
+        },
+        error => {
+          // console.log(error.text)
+        }
+      )
+  }
+
+  const onSubmit = (values) => {
+    FirestoreService.addVideo({
+      ...values,
+      active: false,
+      videoId: values.url.match(/youtu(?:.*\/v\/|.*v\=|\.be\/)([A-Za-z0-9_\-]{11})/)[1],
+    })
+      .then(docRef => {
+        sendEmail(values, docRef.id)
+        // console.log('new id', docRef.id)
+      })
+      .catch(reason => console.log(reason));
+  }
   return (
     <>
       <div className="logo-tv"></div>
@@ -16,32 +54,80 @@ const Home = () => {
           <p>First 100 to sign up to this event will receive a ton of cool shit curated by Slow&nbsp;Factory&nbsp;and&nbsp;RUNA</p>
           <br/>
           <br/>
-
-          <form>
-            <div className="row">
-              <div className="field">
-                <label htmlFor="category">Category</label>
-                <select id="category" name="prompt">
-                  {CATEGORIES_IDS.map((key, index) => (
-                    <option key={index} value={key}>
-                      {CATEGORIES[key].name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="field">
-                <label htmlFor="url">Video url</label>
-                <input type="text" id="url" name="url" />
-              </div>
-            </div>
-            <div className="row">
-              <div className="field">
-                <label htmlFor="email">User</label>
-                <input type="text" id="user" name="user" />
-              </div>
-            </div>
-            <button type="submit">Submit</button>
-          </form>
+          <Formik
+            initialValues={{}}
+            onSubmit={onSubmit}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => {
+              return (
+                <form onSubmit={handleSubmit} name="myForm">
+                  <div className="row">
+                    <div className="field">
+                      <label htmlFor="category">Prompt</label>
+                      <select
+                        id="category"
+                        name="prompt"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      >
+                        <option value="">Select your prompt</option>
+                        {CATEGORIES_IDS.map((key, index) => (
+                          <option key={index} value={key}>
+                            {CATEGORIES[key].name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="field">
+                      <label htmlFor="url">Video url</label>
+                      <input
+                        type="text"
+                        id="url"
+                        name="url"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="field">
+                      <label htmlFor="email">Author</label>
+                      <input
+                        type="text"
+                        id="author"
+                        name="author"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="field">
+                      <label htmlFor="email">Email</label>
+                      <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+                  </div>
+                  <button type="submit" disabled={isSubmitting}>
+                    Submit
+                  </button>
+                </form>
+              )
+            }}
+          </Formik>
         </div>
       </section>
 
