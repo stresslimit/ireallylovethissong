@@ -29,9 +29,10 @@ const Tv = () => {
   const videoParams = '?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0&cc_load_policy=1';
 
   const onClickVideo = (videoInfos) => {
+    console.log('videoInfos',videoInfos)
     setIsLanding(false);
     setVideoInfos({
-      categoryName: CATEGORIES[videoInfos.categoryId].name,
+      categoryName: CATEGORIES[videoInfos.prompt].name,
       ...videoInfos
     });
   
@@ -118,30 +119,16 @@ const Tv = () => {
 
     FirestoreService.getVideos()
       .then(querySnapshot => {
-        let result = []
-        console.log('querySnapshot', querySnapshot)
-
+        let result = [];
         querySnapshot.forEach(x => {
-          result.push(x.data())
-          console.log(x.id, " => ", x.data());
+          if(x.data().active) {
+            result.push(x.data())
+          }
         })
-        console.log('result', result)
         // setCompanies(result)
         setImageArray(getImageArray(result));
       })
       .catch(() => {});
-
-    // FirestoreService.getVideos()
-    //   .then(docs => {
-    //     console.log('===',docs)
-    //     Object.keys(docs).forEach((doc) => {
-    //         console.log(doc.id, " => ", doc.data());
-    //         setImageArray(getImageArray(doc.data()));
-    //     });
-    //   })
-    //   .catch(reason => {
-    //     console.log(reason)
-    //   });
   }, []);
 
   const onClickOpenPlaylist = () => {
@@ -179,7 +166,7 @@ const Tv = () => {
       <iframe
         className={`${!isLanding && toggleVideo ? 'active' : ''}`}
         title="iframe-first-video"
-        src={`${videoMainUrl}${firstVideo.id}${videoParams}&start=${firstVideo.start}`}
+        src={`${videoMainUrl}${firstVideo.videoId}${videoParams}&start=${firstVideo.start}`}
         frameBorder="0"
         allowFullScreen
         // allow="autoplay"
@@ -187,7 +174,7 @@ const Tv = () => {
       <iframe
         className={`${!isLanding && !toggleVideo ? 'active' : ''}`}
         title="iframe-second-video"
-        src={`${videoMainUrl}${secondVideo.id}${videoParams}&start=${secondVideo.start}`}
+        src={`${videoMainUrl}${secondVideo.videoId}${videoParams}&start=${secondVideo.start}`}
         frameBorder="0"
         allowFullScreen
         // allow="autoplay"
@@ -204,7 +191,15 @@ const Tv = () => {
         onClick={onClickOpenPlaylist}
       >
         <div className="infos">
-          <div className="image">{videoInfos.image && <img alt={`Thumbnail of the video from ${videoInfos.author}`} src={videoInfos.image} />}</div>
+          <div className="image">
+            <img src="favicon.png" className="favicon" />
+            {videoInfos.videoId && (
+              <img
+                alt={`Thumbnail of the video from ${videoInfos.author}`}
+                src={`https://img.youtube.com/vi/${videoInfos.videoId}/1.jpg`}
+              />
+            )}
+          </div>
           <div>
             <div className="category">{videoInfos.categoryName}</div>
             <div className="video-title">{videoInfos.author}</div>

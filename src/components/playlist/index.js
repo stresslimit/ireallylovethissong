@@ -24,14 +24,17 @@ export default (props) => {
     setIsOpenCloseRows(result);
 
     FirestoreService.getVideos()
-    .then(querySnapshot => {
-      let result = []
-      querySnapshot.forEach(x => {
-        result.push(x.data())
+      .then(querySnapshot => {
+        let result = []
+        querySnapshot.forEach(x => {
+          console.log('=====',x.data().active)
+          if(x.data().active){
+            result.push(x.data());
+          }
+        })
+        setVideos(result);
       })
-      setVideos(result);
-    })
-    .catch(() => {});
+      .catch(() => {});
   }, []);
 
   const onClickToggleOpen = (index) => {

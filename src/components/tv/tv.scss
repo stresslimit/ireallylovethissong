@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   iframe{
     width: 100%;
     height: 100%;
@@ -23,7 +24,7 @@
     width: 100%;
     height: 248px;
     background-color: #222020;
-    background-image: url('../../../static/tenor.gif');
+    background-image: url('../../../static/black-bg.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     opacity: 0;
@@ -107,15 +108,19 @@
     justify-content: space-between;
     text-align: left;
   }
+  .favicon{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: -5px;
+    margin-right: 1rem;
+  }
   .image{
     padding-right: 1rem;
   }
   img{
     width: 100px;
     height: 50px;
-  }
-  .category-name{
-
   }
   .video-title{
     font-weight: bold;

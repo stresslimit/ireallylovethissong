@@ -19,10 +19,8 @@ export const addVideo = (payload) => {
     });
 };
 
-
 export const getVideos = () => {
-  return db.collection('videos')
-  // .where("active", "==", true)
-  .orderBy('created')
+  return db.collection("videos")
+    .orderBy('created')
     .get();
 };

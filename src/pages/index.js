@@ -1,5 +1,5 @@
-import React from "react"
-import { Formik } from 'formik';
+import React, { useState } from "react"
+import { Formik, Form, Field } from 'formik';
 import emailjs from "emailjs-com"
 import Tv from '../components/tv';
 import { CATEGORIES, CATEGORIES_IDS } from '../components/constants';
@@ -7,6 +7,7 @@ import * as FirestoreService from './firestoreService';
 import './styles.scss';
 
 const Home = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const sendEmail = (values, id) => {
     const templateParams = {
       from_name: 'Slow Factory',
@@ -33,101 +34,148 @@ const Home = () => {
   }
 
   const onSubmit = (values) => {
-    FirestoreService.addVideo({
-      ...values,
-      active: false,
-      videoId: values.url.match(/youtu(?:.*\/v\/|.*v\=|\.be\/)([A-Za-z0-9_\-]{11})/)[1],
-    })
-      .then(docRef => {
-        sendEmail(values, docRef.id)
-        // console.log('new id', docRef.id)
+    setTimeout(() => {
+      FirestoreService.addVideo({
+        ...values,
+        active: false,
+        videoId: values.url.match(/youtu(?:.*\/v\/|.*v\=|\.be\/)([A-Za-z0-9_\-]{11})/)[1],
       })
-      .catch(reason => console.log(reason));
+        .then(docRef => {
+          sendEmail(values, docRef.id);
+          setIsSubmitted(true);
+        })
+        .catch(reason => console.log(reason));
+    }, 500);
   }
+
+  const validateVideoUrl = (value) => {
+    let error;
+    if (!value) {
+      error = 'Required';
+    } else if (!/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/.test(value)) {
+      error = 'Invalid video url';
+    }
+    return error;
+  }
+
+  const validateAuthor = (value) => {
+    let error;
+    if (!value) {
+      error = 'Required';
+    }
+    return error;
+  }
+
+  const validateEmail = (value) => {
+    let error;
+    return error;
+  }
+
+  const validatePrompt = (value) => {
+    let error;
+    if (!value) {
+      error = 'Required';
+    }
+    return error;
+  }
+
   return (
     <>
       <div className="logo-tv"></div>
       <Tv />
       <section className="form">
         <div className="container">
-          <h2>Sign up for front row seat (free) tickets</h2>
-          <p>First 100 to sign up to this event will receive a ton of cool shit curated by Slow&nbsp;Factory&nbsp;and&nbsp;RUNA</p>
-          <br/>
-          <br/>
-          <Formik
-            initialValues={{}}
-            onSubmit={onSubmit}
-          >
-            {({
-              values,
-              errors,
-              touched,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              isSubmitting,
-            }) => {
-              return (
-                <form onSubmit={handleSubmit} name="myForm">
-                  <div className="row">
-                    <div className="field">
-                      <label htmlFor="category">Prompt</label>
-                      <select
-                        id="category"
-                        name="prompt"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      >
-                        <option value="">Select your prompt</option>
-                        {CATEGORIES_IDS.map((key, index) => (
-                          <option key={index} value={key}>
-                            {CATEGORIES[key].name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    <div className="field">
-                      <label htmlFor="url">Video url</label>
-                      <input
-                        type="text"
-                        id="url"
-                        name="url"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="field">
-                      <label htmlFor="email">Author</label>
-                      <input
-                        type="text"
-                        id="author"
-                        name="author"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="field">
-                      <label htmlFor="email">Email</label>
-                      <input
-                        type="text"
-                        id="email"
-                        name="email"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                    </div>
-                  </div>
-                  <button type="submit" disabled={isSubmitting}>
-                    Submit
-                  </button>
-                </form>
-              )
-            }}
-          </Formik>
+        {isSubmitted && (
+          <h2>Thank you for submitting your video.</h2>
+        )}
+        {!isSubmitted && (
+            <>
+              <h2>Sign up for front row seat (free) tickets</h2>
+              <p>First 100 to sign up to this event will receive a ton of cool shit curated by Slow&nbsp;Factory&nbsp;and&nbsp;RUNA</p>
+              <br/>
+              <br/>
+              <Formik
+                initialValues={{
+                  url: '',
+                  author: '',
+                  prompt: ''
+                }}
+                onSubmit={onSubmit}
+              >
+                {({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                  isSubmitting,
+                }) => {
+                  return (
+                    <Form>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="category">Prompt *</label>
+                          <Field
+                            as="select"
+                            name="prompt"
+                            validate={validatePrompt}
+                          >
+                            <option value="">Select your prompt</option>
+                            {CATEGORIES_IDS.map((key, index) => (
+                              <option key={index} value={key}>
+                                {CATEGORIES[key] && CATEGORIES[key].name}
+                              </option>
+                            ))}
+                          </Field>
+                          <div className="error">
+                            {errors.prompt && touched.prompt && <div>{errors.prompt}</div>}
+                          </div>
+                        </div>
+                        <div className="field">
+                          <label htmlFor="url">Video url *</label>
+                          <Field
+                            name="url"
+                            validate={validateVideoUrl}
+                          />
+                          <div className="error">
+                            {errors.url && touched.url && <div>{errors.url}</div>}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="email">Author *</label>
+                          <Field
+                            name="author"
+                            validate={validateAuthor}
+                          />
+                          <div className="error">
+                            {errors.author && touched.author && <div>{errors.author}</div>}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="field">
+                          <label htmlFor="email">Email</label>
+                          <Field
+                            name="email"
+                            validate={validateEmail}
+                          />
+                          <div className="error">
+                            {errors.email && touched.email && <div>{errors.email}</div>}
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" disabled={isSubmitting}>
+                        Submit
+                      </button>
+                    </Form>
+                  )
+                }}
+              </Formik>
+            </>
+        )}
         </div>
       </section>
 
@@ -156,6 +204,9 @@ const Home = () => {
           <br/>
           <br/>
           <p>RUNA is a clean energy drink that sources exclusively from farming families that grow guayusa (gwhy-you-sa) in sustainable, biodiverse forest gardens in the Amazon rainforest. Runa means “Fully Alive,” and is dedicated to bringing our good energy to life through action and through our products. RUNA provides a sustainable regenerative system for the communities that live, work and protect the rainforest. They use only natural ingredients certified by USDA Organic, Fair Trade™, and B-Corp.</p>
+          <br/>
+          <p>Media partner</p>
+          <img src="logo-dazed.png" className="dazed" />
         </div>
       </section>
 

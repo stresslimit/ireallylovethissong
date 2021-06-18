@@ -29,57 +29,57 @@ export const CATEGORIES = {
   lectureme: {
     name: "Lecture me on living authentically and what i means to you", 
   },
-  category11: {
+  showusyouridea: {
     name: "Show us your ideal world", 
   },
-  category12: {
+  findingjoy: {
     name: "Finding joy", 
   },
-  category13: {
+  signusachant: {
     name: "Sing us a chant for the Earth", 
   },
-  category14: {
+  performaphonecall: {
     name: "Perform a phone call to your future-self", 
   },
-  category15: {
+  takeusonawalk: {
     name: "Take us on a walk with you", 
   },
-  category16: {
+  showsomethingyou: {
     name: "Show something you have discovered about yourself", 
   },
-  category17: {
+  howdoyoufind: {
     name: "How do you find privacy in an increasingly less private world?", 
   },
-  category18: {
+  wheredoyouget: {
     name: "Where do you get your super power from? ", 
   },
-  category19: {
+  lecturemeon: {
     name: "Lecture me on: living authentically and what it means to you", 
   },
-  category20: {
+  archiveyour: {
     name: "Archive your community with sounds and visuals ", 
   },
   showus: {
     name: "Show us what we are made of", 
   },
-  // category: {
-  //   name: "Your favorite song sang to you by your mother / grandmother", 
-  // },
-  // category: {
-  //   name: "Tell us a story (with flowers)", 
-  // },
-  // category: {
-  //   name: "Play the sound of your childhood", 
-  // },
-  // category: {
-  //   name: "tell us a story of survival.", 
-  // },
+  yourfavoritesong: {
+    name: "Your favorite song sang to you by your mother / grandmother", 
+  },
+  tellusastoryflower: {
+    name: "Tell us a story (with flowers)", 
+  },
+  playthesound: {
+    name: "Play the sound of your childhood", 
+  },
+  tellusastoryofsurvival: {
+    name: "tell us a story of survival.", 
+  },
   // category: {
   //   name: "What does a playful sanctuary look like?", 
   // },
-  // category: {
-  //   name: "If you were floating in space", 
-  // },
+  ifyouwere: {
+    name: "If you were floating in space", 
+  },
   // category: {
   //   name: "Upcycle something absurd but make it functional", 
   // },
@@ -122,15 +122,18 @@ export const CATEGORIES = {
   // category: {
   //   name: "Transform for us", 
   // },
-  // category: {
-  //   name: "Sing a song to your future self", 
-  // },
-  // category: {
-  //   name: "Show us your divine energy", 
-  // },
-  // category: {
-  //   name: "Show us what confidence looks like", 
-  // },
+  signasongto: {
+    name: "Sing a song to your future self", 
+  },
+  showusyourdivine: {
+    name: "Show us your divine energy", 
+  },
+  showuswhatconfidence: {
+    name: "Show us what confidence looks like", 
+  },
+  showuswhatitfeelslike: {
+    name: "Show us what it feels like to let go of baggage", 
+  },
   // category: {
   //   name: "remix your most treasured memory ", 
   // },
@@ -153,5 +156,14 @@ export const CATEGORIES = {
 
 export const CATEGORIES_IDS = [
   'adayinyourlife', 'whatareyou', 'signus', 'lectureus', 'danceyour', 'howdoesitfeel', 'showussomething', 'takeinventory', 'teachus', 'lectureme',
-  'category11', 'category12', 'category13', 'category14', 'category15', 'category16', 'category17', 'category18', 'category19', 'category20', 'showus',
+  'showusyouridea', 'findingjoy', 'signusachant', 'performaphonecall', 'takeusonawalk', 'showsomethingyou', 'howdoyoufind', 'wheredoyouget', 'lecturemeon', 'archiveyour', 'showus',
+  'yourfavoritesong',
+  'tellusastoryflower',
+  'playthesound',
+  'tellusastoryofsurvival',
+  'ifyouwere',
+  'signasongto',
+  'showusyourdivine',
+  'showuswhatconfidence',
+  'showuswhatitfeelslike',
 ]
