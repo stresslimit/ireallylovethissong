@@ -66,6 +66,7 @@ ul, li{
   }
 }
 
+
 .form{
   color: #000;
   background-color: #fff;
@@ -117,6 +118,13 @@ ul, li{
     padding: 0;
     margin: 2rem auto;
     cursor: pointer;
+    background-color: black;
+    color:white;
+    border: 0;
+    position: relative;
+    &:hover{
+      top: -2px;
+    }
   }
 }
 

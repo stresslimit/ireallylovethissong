@@ -42,8 +42,10 @@ const Tv = () => {
     // Start new video
     setTimeout(() => {
       if (toggleVideo) {
+        setFirstVideo({});
         setSecondVideo(videoInfos);
       } else {
+        setSecondVideo({});
         setFirstVideo(videoInfos);
       }
       setToggleVideo(!toggleVideo);
@@ -137,10 +139,14 @@ const Tv = () => {
 
   return (
     <div id="tv">
+      <div className="top-banner">
+        <a href="https://live.ireallylovethissong.com/">Tune in Live! June 22, 6pm ET</a>
+      </div>
       {isLanding && (
         <div className="landing">
           <div className="center-logo">
-            <img alt="Logo of I really loge that song" src={logoSrc} />
+            <img alt="Zong heart animated" src="zong-animated.gif" />
+            ireallylovethissong
           </div>
           <div className="mosaic">
             {imageArray.map((item, index) => (
@@ -169,7 +175,7 @@ const Tv = () => {
         src={`${videoMainUrl}${firstVideo.videoId}${videoParams}&start=${firstVideo.start}`}
         frameBorder="0"
         allowFullScreen
-        // allow="autoplay"
+        allow="autoplay"
       ></iframe>
       <iframe
         className={`${!isLanding && !toggleVideo ? 'active' : ''}`}
@@ -177,7 +183,7 @@ const Tv = () => {
         src={`${videoMainUrl}${secondVideo.videoId}${videoParams}&start=${secondVideo.start}`}
         frameBorder="0"
         allowFullScreen
-        // allow="autoplay"
+        allow="autoplay"
       ></iframe>
        <div 
         className={`transition ${isTransition ? 'active' : ''}`}

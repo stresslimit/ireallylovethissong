@@ -68,6 +68,9 @@ const Home = () => {
 
   const validateEmail = (value) => {
     let error;
+    if (!value) {
+      error = 'Required';
+    }
     return error;
   }
 
@@ -81,6 +84,7 @@ const Home = () => {
 
   return (
     <>
+    
       <div className="logo-tv"></div>
       <Tv />
       <section className="form">
@@ -90,8 +94,8 @@ const Home = () => {
         )}
         {!isSubmitted && (
             <>
-              <h2>Sign up for front row seat (free) tickets</h2>
-              <p>First 100 to sign up to this event will receive a ton of cool shit curated by Slow&nbsp;Factory&nbsp;and&nbsp;RUNA</p>
+              <h2>Create your own video and submit it here for a chance to see it live on the site</h2>
+              {/* <p>Create your own video and submit it here for a chance to see it live on the site</p> */}
               <br/>
               <br/>
               <Formik
@@ -157,7 +161,7 @@ const Home = () => {
                       </div>
                       <div className="row">
                         <div className="field">
-                          <label htmlFor="email">Email</label>
+                          <label htmlFor="email">Email *</label>
                           <Field
                             name="email"
                             validate={validateEmail}
