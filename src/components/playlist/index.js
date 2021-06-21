@@ -1,79 +1,51 @@
 import React, { useState, useEffect } from "react";
-import videos from '../tv/data';
-
+import * as FirestoreService from '../../firestoreService';
+import { CATEGORIES } from '../constants';
 import './playlist.scss';
 
-export default (props) => {
-  const {
-    active,
-    onClickVideoTitle,
-  } = props;
+const Playlist = ({
+  onClickVideo
+}) => {
+  const [videos, setVideos] = useState([]);
 
-  if (!active) {
-    return null;
-  }
-
-  const [isOpenCloseRows, setIsOpenCloseRows] = useState([]);
-      
   useEffect(() => {
-    const result = videos.map(() => {
-      return { isOpen: false };
-    });
-    setIsOpenCloseRows(result);
+    FirestoreService.getVideos()
+      .then(querySnapshot => {
+        let result = []
+        querySnapshot.forEach(x => {
+          if(x.data().active){
+            result.push(x.data());
+          }
+        })
+        setVideos(result);
+      })
+      .catch(() => {});
   }, []);
-
-  const onClickToggleOpen = (index) => {
-    // console.log('asdf', index)
-    const new_isOpenCloseRows = [...isOpenCloseRows]
-    new_isOpenCloseRows[index].isOpen = !new_isOpenCloseRows[index].isOpen;
-    setIsOpenCloseRows(new_isOpenCloseRows);
-    // console.log(isOpenCloseRows)
-  }
-
-  if (!isOpenCloseRows.length) {
-    return null;
-  }
 
   return (
     <div id="playlist">
-        <ul>
-          {videos.length && videos.map((video, index) => {
-            if (!video.items) {
-              return null;
-            }
-            const isOpen = isOpenCloseRows[index].isOpen;
-            return (
-              <li key={index}>
-                <div className="category" onClick={() => onClickToggleOpen(index)}>
-                  <div
-                    key={index}
-                  >
-                    {video.title ? video.title : ''}
-                  </div>
-                  <div>{isOpen ? 'close' : 'open'}</div>
-                </div>
-                {isOpen && (
-                  <ul className="items">
-                    {video.items.map((item, index2) => (
-                      <li
-                        key={index2}
-                        onClick={() => onClickVideoTitle(index, index2)}
-                      >
-                         <img
-                          src={item.image}
-                        />
-                        <div className="title">
-                          {item.title ? item.title : ''}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                )}   
-              </li>
-            );
-          })}
-        </ul>
+      <ul className="items">
+        {videos.map((item, index2) => (
+          <li
+            key={index2}
+            onClick={() => onClickVideo(item)}
+          >
+            <img
+              src={`https://img.youtube.com/vi/${item.videoId}/1.jpg`}
+            />
+            <div className="infos">
+              <div className="title">
+                {item.author ? item.author : ''}
+              </div>
+              <div className="prompt">
+                {CATEGORIES[item.prompt] ? CATEGORIES[item.prompt].name : ''}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
 
+export default Playlist;
