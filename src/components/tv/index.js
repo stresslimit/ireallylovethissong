@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import * as FirestoreService from '../../pages/firestoreService';
+import * as FirestoreService from '../../firestoreService';
 import Playlist from '../playlist';
-import logoSrc from '../../../static/IRLTS_main_logo.png';
 import { CATEGORIES } from '../constants';
 import menuIcon from '../../../static/icon-menu.svg';
 import './tv.scss';
@@ -29,7 +28,7 @@ const Tv = () => {
   const videoParams = '?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0&cc_load_policy=1';
 
   const onClickVideo = (videoInfos) => {
-    console.log('videoInfos',videoInfos)
+    setIsPlaylistOpen(false);
     setIsLanding(false);
     setVideoInfos({
       categoryName: CATEGORIES[videoInfos.prompt].name,
@@ -58,10 +57,16 @@ const Tv = () => {
   }
 
   const getImageArray = (videos) => {
-    const tileWidth =  210;
-    const tileHeight = 120;
+    let tileWidth =  210;
+    let tileHeight = 120;
+
     const viewPortWidth = document.documentElement.clientWidth;
     const viewPortHeight = document.documentElement.clientHeight - (tileHeight * 2);
+
+    if (viewPortWidth < 700) {
+      tileWidth =  100;
+      tileHeight = 57;
+    }
 
     const gridColumn = Math.floor(viewPortWidth / tileWidth);
     const gridRow = Math.floor(viewPortHeight / tileHeight);
@@ -108,6 +113,8 @@ const Tv = () => {
         ...item,
         x: (100/gridColumn * col) + getRandomInt(10) + '%',
         y: (100/gridRow * row) + getRandomInt(10) + '%',
+        width: tileWidth,
+        height: tileHeight,
       }
     })
   }
@@ -162,6 +169,10 @@ const Tv = () => {
                   <img
                     alt={`Thumbnail of the video from ${item.author}`}
                     src={`https://img.youtube.com/vi/${item.videoId}/1.jpg`}
+                    style={{
+                      width: item.width,
+                      height: item.height,
+                    }}
                   />
                 )}
               </button>
@@ -188,27 +199,29 @@ const Tv = () => {
        <div 
         className={`transition ${isTransition ? 'active' : ''}`}
       ></div>
-      <Playlist
-        active={isPlaylistOpen}
-        onClickVideo={onClickVideo}
-      />
+      {isPlaylistOpen && (
+        <Playlist
+          onClickVideo={onClickVideo}
+        />
+      )}
       <div
         className="bottom-nav"
         onClick={onClickOpenPlaylist}
       >
-        <div className="infos">
+        <div className="left">
           <div className="image">
-            <img src="favicon.png" className="favicon" />
+            {/* <img src="favicon.png" className="favicon" /> */}
             {videoInfos.videoId && (
               <img
+                className="thumb"
                 alt={`Thumbnail of the video from ${videoInfos.author}`}
                 src={`https://img.youtube.com/vi/${videoInfos.videoId}/1.jpg`}
               />
             )}
           </div>
-          <div>
-            <div className="category">{videoInfos.categoryName}</div>
+          <div className="infos">
             <div className="video-title">{videoInfos.author}</div>
+            <div className="prompt">{videoInfos.categoryName}</div>
           </div>
         </div>
         <div className="actions">

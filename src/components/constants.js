@@ -69,7 +69,7 @@ export const CATEGORIES = {
     name: "Play the sound of your childhood", 
   },
   tellusastoryofsurvival: {
-    name: "tell us a story of survival.", 
+    name: "Tell us a story of survival.", 
   },
   // category: {
   //   name: "What does a playful sanctuary look like?", 

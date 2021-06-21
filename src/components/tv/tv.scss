@@ -1,7 +1,7 @@
 #tv{
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 100%;
   top: 0;
   left: 0;
   bottom: 0;
@@ -61,6 +61,7 @@
   left: 0;
   width: 100%;
   height: 20px;
+  z-index: 10;
   a{
     color: white;
     font-size: 1rem;
@@ -86,17 +87,28 @@
   }
 }
 
+
 .center-logo{
   z-index: 10;
   color: white;
-  font-size: 70px;
+  font-size: 30px;
   font-weight: bold;
   text-shadow: 0px 0px 12px black;
   letter-spacing: -2px;
   text-align:center;
   img{
     display: block;
-    max-width: 100px;
+    max-width: 50px;
+  }
+}
+
+@media (min-width: 700px) and (orientation: landscape) { 
+  .center-logo{
+    height: 100%;
+    font-size: 70px;
+    img{
+      max-width: 100px;
+    }
   }
 }
 
@@ -116,46 +128,85 @@
     box-shadow: 0px 35px 42px 0px #00000040;
   }
   img{
-    width: 200px;
+    // width: 200px;
   }
 }
+
 .bottom-nav{
+  font-size: 14px;
   text-align: right;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 8%;
-  padding: .5rem 1rem;
+  padding: .5rem;
   background: #242528;
   display: flex;
   justify-content: space-between;
   color:#F9F9F9;
   align-items: center;
-  .infos{
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-  }
   .favicon{
-    width: 40px;
-    height: 40px;
-    position: relative;
-    top: -5px;
-    margin-right: 1rem;
+    display: none;
   }
   .image{
-    padding-right: 1rem;
+    padding-right: .5rem;
   }
-  img{
-    width: 60px;
+  .left{
+    display: flex;
+    max-width: 80%;
+  }
+  .thumb{
+    width: 50px;
+  }
+  .infos{
+    text-align:left;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
   }
   .video-title{
+    font-size: 1rem;
     font-weight: bold;
+  }
+  .prompt{
+    padding-top: .25rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+  .bottom-nav{
+    height: auto;
+    font-size: 16px;
+    padding: 1rem;
+    .favicon{
+      width: 40px;
+      height: 40px;
+      position: relative;
+      top: -5px;
+      margin-right: 1rem;
+    }
+    .image{
+      padding-right: 1rem;
+      img{
+        width: 60px;
+      }
+    }
+    .prompt{
+      white-space: nowrap;
+      overflow: none;
+      text-overflow: ellipsis;
+    }
   }
 }
 
 .actions{
+  img{
+    max-width: 70%;
+  }
   button{
     background-color: transparent;
     border: 0;

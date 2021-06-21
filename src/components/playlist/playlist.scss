@@ -1,14 +1,15 @@
 #playlist{
   position: absolute;
   background-color: #242528;
-  top: 72px;
-  bottom: 128px;
-  right: 32px;
-  width: 300px;
   z-index: 10;
   padding: 16px;
   overflow-y: auto;
-  box-shadow: 0px 35px 42px 0px #00000040;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
   ul ul{
     padding-left: 16px;
   }
@@ -29,9 +30,8 @@
       height: 20px;
       cursor: pointer;
       img{
-
-      width: 10px;
-      height: 20px;
+        width: 10px;
+        height: 20px;
       }
     }
     .close{
@@ -45,7 +45,6 @@
     width: 90%;
   }
   .items{
-    padding: .5rem 0 0;
     li{
       display: flex;
       align-items: center;
@@ -56,11 +55,29 @@
       width: 50px;
       border-radius: 4px;
     }
-    .title{
+    .infos{
       padding-left: 1rem;
-      font-size: .75rem;
+    }
+    .title{
+      font-size: .80rem;
       font-weight: bold;
       color: #FCFCFC;
     }
+    .prompt{
+      font-size: 0.75rem;
+      padding-top: 1px;
+    }
+  }
+}
+
+@media (min-width: 700px) and (orientation: landscape) { 
+  #playlist{
+    border: 0;
+    left: auto;
+    top: 72px;
+    bottom: 100px;
+    right: 1rem;
+    width: 300px;
+    box-shadow: 0px 35px 42px 0px #00000040;
   }
 }

@@ -89,7 +89,6 @@ ul, li{
     }
   }
   h2{
-    font-size: 48px;
     font-weight: bold;
     margin-bottom: 2rem;
   }
@@ -128,6 +127,13 @@ ul, li{
   }
 }
 
+@media (min-width: 700px) and (orientation: landscape) {
+  .form{
+    h2{
+      font-size: 48px;
+    }
+  }
+}
 
 .about{
   background-color: #ED1C24;

@@ -1,7 +1,7 @@
 import firebase from "firebase/app"
 import "firebase/auth"
 import "firebase/firestore";
-import CONFIG from './config';
+import CONFIG from './pages/config';
 
 firebase.initializeApp(CONFIG);
 const db = firebase.firestore();

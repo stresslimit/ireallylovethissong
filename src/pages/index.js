@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import emailjs from "emailjs-com"
 import Tv from '../components/tv';
 import { CATEGORIES, CATEGORIES_IDS } from '../components/constants';
-import * as FirestoreService from './firestoreService';
+import * as FirestoreService from '../firestoreService';
 import './styles.scss';
 
 const Home = () => {
