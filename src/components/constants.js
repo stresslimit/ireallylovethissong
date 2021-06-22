@@ -11,6 +11,9 @@ export const CATEGORIES = {
   lectureus: {
     name: "Lecture us on _______________", 
   },
+  danceforyourancestors: {
+    name: "Dance for your ancestors", 
+  },
   danceyour: {
     name: "Dance your anxiety away", 
   },
@@ -27,7 +30,7 @@ export const CATEGORIES = {
     name: "Teach us a meditation", 
   },
   lectureme: {
-    name: "Lecture me on living authentically and what i means to you", 
+    name: "Lecture me on living authentically and what it means to you", 
   },
   showusyouridea: {
     name: "Show us your ideal world", 
@@ -155,12 +158,19 @@ export const CATEGORIES = {
   // category: {
   //   name: "Show us all your personalities", 
   // },
+  whatlandtryingtell: {
+    name: "What is the land trying to tell us?", 
+  },
+  tellussomethingkindergarten: {
+    name: "Tell us something everyone should learn in kindergarten", 
+  },
 };
 
 export const CATEGORIES_IDS = [
   'adayinyourlife',
   'archiveyour',
   'danceyour',
+  'danceforyourancestors',
   'findingjoy',
   'howdoesitfeel',
   'howdoyoufind',
@@ -174,6 +184,7 @@ export const CATEGORIES_IDS = [
   'takeusonawalk',
   'tellusastoryflower',
   'tellusastoryofsurvival',
+  'tellussomethingkindergarten',
   'showsomethingyou',
   'showussomething',
   'showus',
@@ -187,6 +198,7 @@ export const CATEGORIES_IDS = [
   'signasongto',
   'whatareyou',
   'wheredoyouget',
+  'whatlandtryingtell',
   'writesongdiaspora',
   'yourfavoritesong',
 ]
