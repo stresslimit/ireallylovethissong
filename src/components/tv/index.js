@@ -7,7 +7,6 @@ import menuIcon from '../../../static/icon-menu.svg';
 import './tv.scss';
 
 const Tv = () => {
-  let youtubePlayer = '';
   const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
   const [isLanding, setIsLanding] = useState(true);
   const [imageArray, setImageArray] = useState([]);
@@ -51,7 +50,6 @@ const Tv = () => {
 
   const onEnd = () => {
     setIsLanding(true);
-    console.log('here')
   }
 
   const getImageArray = (videos) => {
