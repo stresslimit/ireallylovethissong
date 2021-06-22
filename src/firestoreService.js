@@ -1,14 +1,10 @@
 import firebase from "firebase/app"
 import "firebase/auth"
 import "firebase/firestore";
-import CONFIG from './pages/config';
+import CONFIG from './firestoreConfig';
 
 firebase.initializeApp(CONFIG);
 const db = firebase.firestore();
-
-export const authenticateAnonymously = () => {
-    return firebase.auth().signInAnonymously();
-};
 
 export const addVideo = (payload) => {
   return db.collection('videos')

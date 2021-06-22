@@ -131,6 +131,12 @@ export const CATEGORIES = {
   showuswhatitfeelslike: {
     name: "Show us what it feels like to let go of baggage", 
   },
+  showsomethingyouhave: {
+    name: "Show us something you have recently discovered about yourself", 
+  },
+  writesongdiaspora: {
+    name: "Write a song from the diaspora", 
+  },
   // category: {
   //   name: "remix your most treasured memory ", 
   // },
@@ -175,10 +181,12 @@ export const CATEGORIES_IDS = [
   'showusyouridea',
   'showuswhatconfidence',
   'showuswhatitfeelslike',
+  'showsomethingyouhave',
   'signusachant',
   'signus',
   'signasongto',
   'whatareyou',
   'wheredoyouget',
+  'writesongdiaspora',
   'yourfavoritesong',
 ]
