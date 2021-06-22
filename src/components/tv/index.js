@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import YouTube from '@u-wave/react-youtube';
 import * as FirestoreService from '../../firestoreService';
 import Playlist from '../playlist';
 import { CATEGORIES } from '../constants';
@@ -6,54 +7,51 @@ import menuIcon from '../../../static/icon-menu.svg';
 import './tv.scss';
 
 const Tv = () => {
-  const [firstVideo, setFirstVideo] = useState({
-    id: '',
-    start: '',
-  });
-  const [secondVideo, setSecondVideo] = useState({
-    id: '',
-    start: '',
-  });
+  let youtubePlayer = '';
   const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
   const [isLanding, setIsLanding] = useState(true);
   const [imageArray, setImageArray] = useState([]);
-  const [toggleVideo, setToggleVideo] = useState(true);
-  const [isTransition, setIsTransition] = useState(false);
   const [videoInfos, setVideoInfos] = useState({
     id: '',
     title: '',
     categoryName: '',
+    videoId: '',
   });
-  const videoMainUrl = 'https://www.youtube-nocookie.com/embed/';
-  const videoParams = '?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0&cc_load_policy=1';
+
+  useEffect(() => {
+    FirestoreService.getVideos()
+      .then(querySnapshot => {
+        let result = [];
+        querySnapshot.forEach(x => {
+          if(x.data().active) {
+            result.push(x.data())
+          }
+        })
+        // setCompanies(result)
+        setImageArray(getImageArray(result));
+      })
+      .catch(() => {});
+
+  }, []);
 
   const onClickVideo = (videoInfos) => {
+    // Close playlist after clicking video
+    // TODO: let it open on Desktop
     setIsPlaylistOpen(false);
+
+    // Hide landing since the video will be on top of it anyway
     setIsLanding(false);
+
+    // Set video infos that will be displayed in the bottom nav
     setVideoInfos({
       categoryName: CATEGORIES[videoInfos.prompt].name,
       ...videoInfos
     });
-  
-    // Add transition
-    setIsTransition(true);
+  }
 
-    // Start new video
-    setTimeout(() => {
-      if (toggleVideo) {
-        setFirstVideo({});
-        setSecondVideo(videoInfos);
-      } else {
-        setSecondVideo({});
-        setFirstVideo(videoInfos);
-      }
-      setToggleVideo(!toggleVideo);
-    }, 500);
-
-    // Remove transition
-    setTimeout(() => {
-      setIsTransition(false);
-    }, 1500);
+  const onEnd = () => {
+    setIsLanding(true);
+    console.log('here')
   }
 
   const getImageArray = (videos) => {
@@ -72,7 +70,6 @@ const Tv = () => {
     const gridRow = Math.floor(viewPortHeight / tileHeight);
 
     const gridSize = gridColumn * gridRow;
-    console.log(viewPortHeight, gridRow, gridSize)
 
     const grid = new Array(gridSize)
       .join().split(',')
@@ -108,7 +105,6 @@ const Tv = () => {
         row = row + 1;
       }
 
-      //Math.random() < 0.5 ? -1 : 1
       return {
         ...item,
         x: (100/gridColumn * col) + getRandomInt(10) + '%',
@@ -119,27 +115,6 @@ const Tv = () => {
     })
   }
 
-  useEffect(() => {
-    setIsTransition(true);
-    setTimeout(() => {
-      setIsTransition(false);
-      setToggleVideo(true);
-    }, 1500);
-
-    FirestoreService.getVideos()
-      .then(querySnapshot => {
-        let result = [];
-        querySnapshot.forEach(x => {
-          if(x.data().active) {
-            result.push(x.data())
-          }
-        })
-        // setCompanies(result)
-        setImageArray(getImageArray(result));
-      })
-      .catch(() => {});
-  }, []);
-
   const onClickOpenPlaylist = () => {
     setIsPlaylistOpen(!isPlaylistOpen);
   }
@@ -148,6 +123,17 @@ const Tv = () => {
     <div id="tv">
       <div className="top-banner">
         <a href="https://live.ireallylovethissong.com/">Tune in Live! June 22, 6pm ET</a>
+      </div>
+      <div className="youtube-container">
+        <YouTube
+          id='youtube-player'
+          video={videoInfos.videoId}
+          autoplay
+          autohide
+          modestbranding
+          showCaptions
+          onEnd={onEnd}
+        />
       </div>
       {isLanding && (
         <div className="landing">
@@ -180,25 +166,6 @@ const Tv = () => {
           </div>
         </div>
       )}
-      <iframe
-        className={`${!isLanding && toggleVideo ? 'active' : ''}`}
-        title="iframe-first-video"
-        src={`${videoMainUrl}${firstVideo.videoId}${videoParams}&start=${firstVideo.start}`}
-        frameBorder="0"
-        allowFullScreen
-        allow="autoplay"
-      ></iframe>
-      <iframe
-        className={`${!isLanding && !toggleVideo ? 'active' : ''}`}
-        title="iframe-second-video"
-        src={`${videoMainUrl}${secondVideo.videoId}${videoParams}&start=${secondVideo.start}`}
-        frameBorder="0"
-        allowFullScreen
-        allow="autoplay"
-      ></iframe>
-       <div 
-        className={`transition ${isTransition ? 'active' : ''}`}
-      ></div>
       {isPlaylistOpen && (
         <Playlist
           onClickVideo={onClickVideo}
