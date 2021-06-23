@@ -119,9 +119,6 @@ const Tv = () => {
 
   return (
     <div id="tv">
-      <div className="top-banner">
-        <a href="https://live.ireallylovethissong.com/">Tune in Live! June 22, 6pm ET</a>
-      </div>
       <div className="youtube-container">
         <YouTube
           id='youtube-player'
