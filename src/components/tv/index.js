@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import YouTube from '@u-wave/react-youtube';
-import { navigate } from "gatsby"
+// import { navigate } from "gatsby"
+import { navigate } from "@reach/router"  
 import * as FirestoreService from '../../firestoreService';
 import Playlist from '../playlist';
 import { CATEGORIES } from '../constants';

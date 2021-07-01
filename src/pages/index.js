@@ -9,6 +9,7 @@ import './styles.scss';
 
 const IndexPage = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+
   const sendEmail = (values, id) => {
     const templateParams = {
       from_name: 'Slow Factory',
@@ -191,8 +192,8 @@ const IndexPage = (props) => {
         <div className="manifesto">
           <div className="container">
             <div className="headline">
-               <h2>Manifesto</h2>
-               <div className="line" />
+              <h2>Manifesto</h2>
+              <div className="line" />
             </div>
             <div className="content">
               <div className="side">

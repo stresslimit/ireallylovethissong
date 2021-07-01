@@ -1,7 +1,7 @@
 import React from "react"
 
 const ErrorPage = () => {
-  return (<div>404 page do not exist</div>);
+  return (<div></div>);
 }
 
 export default ErrorPage;
