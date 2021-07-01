@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import YouTube from '@u-wave/react-youtube';
+import { navigate } from "gatsby"
 import * as FirestoreService from '../../firestoreService';
 import Playlist from '../playlist';
 import { CATEGORIES } from '../constants';
 import menuIcon from '../../../static/icon-menu.svg';
 import './tv.scss';
 
-const Tv = () => {
+const Tv = ({ pathname }) => {
+  const [videos, setVideos] = useState([]);
+  const [videoSlug, setVideoSlug] = useState(pathname);
   const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
   const [isLanding, setIsLanding] = useState(true);
   const [imageArray, setImageArray] = useState([]);
@@ -26,14 +29,24 @@ const Tv = () => {
             result.push(x.data())
           }
         })
-        // setCompanies(result)
         setImageArray(getImageArray(result));
+        setVideos(result.reverse());
       })
       .catch(() => {});
-
   }, []);
 
-  const onClickVideo = (videoInfos) => {
+  useEffect(() => {
+    setVideoSlug(pathname)
+  }, [pathname]);
+
+  useEffect(() => {
+    if (videos.length && videoSlug){
+      loadVideo(videos.find(x => x.videoId === videoSlug))
+    }
+  }, [videos, videoSlug]);
+
+
+  const loadVideo = (videoInfos) => {
     // Close playlist after clicking video
     // TODO: let it open on Desktop
     setIsPlaylistOpen(false);
@@ -46,10 +59,14 @@ const Tv = () => {
       categoryName: CATEGORIES[videoInfos.prompt].name,
       ...videoInfos
     });
+
+    // Update url
+    navigate(`/${videoInfos.videoId}`)
   }
 
   const onEnd = () => {
-    setIsLanding(true);
+    const randomVideoIndex = Math.floor(Math.random() * videos.length);
+    loadVideo(videos[randomVideoIndex]);
   }
 
   const getImageArray = (videos) => {
@@ -144,7 +161,7 @@ const Tv = () => {
                   left: item.x,
                   top: item.y,
                 }}
-                onClick={() => onClickVideo(item)}
+                onClick={() => loadVideo(item)}
               >
                 {item.videoId && (
                   <img
@@ -163,7 +180,9 @@ const Tv = () => {
       )}
       {isPlaylistOpen && (
         <Playlist
-          onClickVideo={onClickVideo}
+          {...{
+            videos,
+          }}
         />
       )}
       <div
@@ -183,7 +202,15 @@ const Tv = () => {
           </div>
           <div className="infos">
             <div className="video-title">{videoInfos.author}</div>
-            <div className="prompt">{videoInfos.categoryName}</div>
+            <div className="prompt">
+              <a
+                href={`https://www.youtube.com/watch?v=${videoInfos.videoId}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {videoInfos.categoryName}
+              </a>
+            </div>
           </div>
         </div>
         <div className="actions">

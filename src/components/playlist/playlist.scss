@@ -46,10 +46,14 @@
   }
   .items{
     li{
-      display: flex;
       align-items: center;
       padding: .5rem 0;
       cursor: pointer;
+      a{
+        display: flex;
+        color:white;
+        text-decoration: none;
+      }
     }
     img{
       width: 50px;

@@ -1796,6 +1796,13 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/hast@^2.0.0":
+  version "2.3.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/@types/hast/-/hast-2.3.1.tgz#b16872f2a6144c7025f296fb9636a667ebb79cd9"
+  integrity sha1-sWhy8qYUTHAl8pb7ljamZ+u3nNk=
+  dependencies:
+    "@types/unist" "*"
+
 "@types/http-proxy@^1.17.4":
   version "1.17.6"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/@types/http-proxy/-/http-proxy-1.17.6.tgz#62dc3fade227d6ac2862c8f19ee0da9da9fd8616"
@@ -1848,6 +1855,13 @@
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/@types/long/-/long-4.0.1.tgz#459c65fa1867dafe6a8f322c4c51695663cc55e9"
   integrity sha1-RZxl+hhn2v5qjzIsTFFpVmPMVek=
 
+"@types/mdast@^3.0.0", "@types/mdast@^3.0.3":
+  version "3.0.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/@types/mdast/-/mdast-3.0.3.tgz#2d7d671b1cd1ea3deb306ea75036c2a0407d2deb"
+  integrity sha1-LX1nGxzR6j3rMG6nUDbCoEB9Les=
+  dependencies:
+    "@types/unist" "*"
+
 "@types/minimatch@*":
   version "3.0.4"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/@types/minimatch/-/minimatch-3.0.4.tgz#f0ec25dbf2f0e4b18647313ac031134ca5b24b21"
@@ -1892,6 +1906,11 @@
   version "4.0.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha1-L4u0QUNNFjs1+4/9zNcTiSf/uMA=
+
+"@types/parse5@^5.0.0":
+  version "5.0.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/@types/parse5/-/parse5-5.0.3.tgz#e7b5aebbac150f8b5fdd4a46e7f0bd8e65e19109"
+  integrity sha1-57Wuu6wVD4tf3UpG5/C9jmXhkQk=
 
 "@types/prop-types@*":
   version "15.7.3"
@@ -1949,7 +1968,7 @@
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/@types/tmp/-/tmp-0.0.33.tgz#1073c4bc824754ae3d10cfab88ab0237ba964e4d"
   integrity sha1-EHPEvIJHVK49EM+riKsCN7qWTk0=
 
-"@types/unist@^2.0.0", "@types/unist@^2.0.2":
+"@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2", "@types/unist@^2.0.3":
   version "2.0.3"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha1-nAiGeYdvN061mD8VDUeHqm+zLX4=
@@ -2356,7 +2375,7 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-anymatch@~3.1.1:
+anymatch@~3.1.1, anymatch@~3.1.2:
   version "3.1.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/anymatch/-/anymatch-3.1.2.tgz#c0557c096af32f106198f4f4e2a383537e378716"
   integrity sha1-wFV8CWrzLxBhmPT04qODU343hxY=
@@ -2439,6 +2458,11 @@ array-includes@^3.1.1, array-includes@^3.1.2, array-includes@^3.1.3:
     es-abstract "^1.18.0-next.2"
     get-intrinsic "^1.1.1"
     is-string "^1.0.5"
+
+array-iterate@^1.0.0:
+  version "1.1.4"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/array-iterate/-/array-iterate-1.1.4.tgz#add1522e9dd9749bb41152d08b845bd08d6af8b7"
+  integrity sha1-rdFSLp3ZdJu0EVLQi4Rb0I1q+Lc=
 
 array-union@^1.0.1:
   version "1.0.2"
@@ -3043,7 +3067,7 @@ chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^4.0.0, chalk@^4.1.0:
+chalk@^4.0, chalk@^4.0.0, chalk@^4.1.0:
   version "4.1.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/chalk/-/chalk-4.1.1.tgz#c80b3fab28bf6371e6863325eee67e618b77e6ad"
   integrity sha1-yAs/qyi/Y3HmhjMl7uZ+YYt35q0=
@@ -3109,6 +3133,21 @@ chokidar@^2.1.8:
     upath "^1.1.1"
   optionalDependencies:
     fsevents "^1.2.7"
+
+chokidar@^3.4.3:
+  version "3.5.2"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/chokidar/-/chokidar-3.5.2.tgz#dba3976fcadb016f66fd365021d91600d01c1e75"
+  integrity sha1-26OXb8rbAW9m/TZQIdkWANAcHnU=
+  dependencies:
+    anymatch "~3.1.2"
+    braces "~3.0.2"
+    glob-parent "~5.1.2"
+    is-binary-path "~2.1.0"
+    is-glob "~4.0.1"
+    normalize-path "~3.0.0"
+    readdirp "~3.6.0"
+  optionalDependencies:
+    fsevents "~2.3.2"
 
 chrome-trace-event@^1.0.2:
   version "1.0.3"
@@ -3257,6 +3296,11 @@ combined-stream@^1.0.8:
   integrity sha1-w9RaizT9cwYxoRCoolIGgrMdWn8=
   dependencies:
     delayed-stream "~1.0.0"
+
+comma-separated-tokens@^1.0.0:
+  version "1.0.8"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/comma-separated-tokens/-/comma-separated-tokens-1.0.8.tgz#632b80b6117867a158f1080ad498b2fbe7e3f5ea"
+  integrity sha1-YyuAthF4Z6FY8QgK1Jiy++fj9eo=
 
 command-exists@^1.2.4:
   version "1.2.9"
@@ -3460,6 +3504,11 @@ core-js@3.6.5:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
   integrity sha1-c5XcJzrzf7LlDpvT2f6EEoUjHRo=
 
+core-js@^2.6.5:
+  version "2.6.12"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
+  integrity sha1-2TM9+nsGXjR8xWgiGdb2kIWcwuw=
+
 core-js@^3.9.0:
   version "3.13.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/core-js/-/core-js-3.13.0.tgz#58ca436bf01d6903aee3d364089868d0d89fe58d"
@@ -3619,6 +3668,11 @@ css-select@^3.1.2:
     domhandler "^4.0.0"
     domutils "^2.4.3"
     nth-check "^2.0.0"
+
+css-selector-parser@^1.0.0:
+  version "1.4.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/css-selector-parser/-/css-selector-parser-1.4.1.tgz#03f9cb8a81c3e5ab2c51684557d5aaf6d2569759"
+  integrity sha1-A/nLioHD5assUWhFV9Wq9tJWl1k=
 
 css-tree@^1.1.2:
   version "1.1.3"
@@ -3811,6 +3865,11 @@ deepmerge@^2.1.1:
   version "2.2.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/deepmerge/-/deepmerge-2.2.1.tgz#5d3ff22a01c00f645405a2fbc17d0778a1801170"
   integrity sha1-XT/yKgHAD2RUBaL7wX0HeKGAEXA=
+
+deepmerge@^4.0:
+  version "4.2.2"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha1-RNLqNnm49NT/ujPwPYZfwee/SVU=
 
 default-gateway@^4.2.0:
   version "4.2.0"
@@ -4058,6 +4117,13 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
+domhandler@^3.0.0:
+  version "3.3.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/domhandler/-/domhandler-3.3.0.tgz#6db7ea46e4617eb15cf875df68b2b8524ce0037a"
+  integrity sha1-bbfqRuRhfrFc+HXfaLK4UkzgA3o=
+  dependencies:
+    domelementtype "^2.0.1"
+
 domhandler@^4.0.0, domhandler@^4.2.0:
   version "4.2.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/domhandler/-/domhandler-4.2.0.tgz#f9768a5f034be60a89a27c2e4d0f74eba0d8b059"
@@ -4072,6 +4138,15 @@ domutils@^1.5.1, domutils@^1.7.0:
   dependencies:
     dom-serializer "0"
     domelementtype "1"
+
+domutils@^2.0.0:
+  version "2.7.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/domutils/-/domutils-2.7.0.tgz#8ebaf0c41ebafcf55b0b72ec31c56323712c5442"
+  integrity sha1-jrrwxB66/PVbC3LsMcVjI3EsVEI=
+  dependencies:
+    dom-serializer "^1.0.1"
+    domelementtype "^2.2.0"
+    domhandler "^4.2.0"
 
 domutils@^2.4.3:
   version "2.6.0"
@@ -4118,6 +4193,11 @@ emailjs-com@^3.1.0:
   version "3.1.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/emailjs-com/-/emailjs-com-3.1.0.tgz#442927269bf04f366ca30d67b4272f55961979da"
   integrity sha1-RCknJpvwTzZsow1ntCcvVZYZedo=
+
+"emoji-regex@>=6.0.0 <=6.1.1":
+  version "6.1.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/emoji-regex/-/emoji-regex-6.1.1.tgz#c6cd0ec1b0642e2a3c67a1137efc5e796da4f88e"
+  integrity sha1-xs0OwbBkLio8Z6ETfvxeeW2k+I4=
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -4752,7 +4832,7 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
-extend@^3.0.0:
+extend@^3.0.0, extend@^3.0.2:
   version "3.0.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha1-+LETa0Bx+9jrFAr/hYsQGewpFfo=
@@ -4869,6 +4949,15 @@ file-loader@^6.2.0:
   dependencies:
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
+
+file-type@^16.0.0:
+  version "16.5.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/file-type/-/file-type-16.5.0.tgz#16a2626f3b33bac612f6e81e52216f3a7c8e12a2"
+  integrity sha1-FqJibzszusYS9ugeUiFvOnyOEqI=
+  dependencies:
+    readable-web-to-node-stream "^3.0.0"
+    strtok3 "^6.0.3"
+    token-types "^2.0.0"
 
 file-type@^16.2.0:
   version "16.4.0"
@@ -5113,7 +5202,7 @@ fsevents@^1.2.7:
     bindings "^1.5.0"
     nan "^2.12.1"
 
-fsevents@~2.3.1:
+fsevents@~2.3.1, fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=
@@ -5186,6 +5275,20 @@ gatsby-core-utils@^2.6.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
+gatsby-core-utils@^2.8.0:
+  version "2.8.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gatsby-core-utils/-/gatsby-core-utils-2.8.0.tgz#e6d2e6e56609c4fcef5ba6fbf29ad863dc7bb8d2"
+  integrity sha1-5tLm5WYJxPzvW6b78prYY9x7uNI=
+  dependencies:
+    ci-info "2.0.0"
+    configstore "^5.0.1"
+    file-type "^16.2.0"
+    fs-extra "^8.1.0"
+    node-object-hash "^2.0.0"
+    proper-lockfile "^4.1.1"
+    tmp "^0.2.1"
+    xdg-basedir "^4.0.0"
+
 gatsby-graphiql-explorer@^1.6.0:
   version "1.6.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-1.6.0.tgz#90e64e865bf9e5865183e9ee72737ed2e5c32c38"
@@ -5237,6 +5340,17 @@ gatsby-plugin-google-analytics@^3.8.0:
     minimatch "3.0.4"
     web-vitals "^1.1.2"
 
+gatsby-plugin-netlify@^3.8.0:
+  version "3.8.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gatsby-plugin-netlify/-/gatsby-plugin-netlify-3.8.0.tgz#615e10e0d42d69d517f257c98204a1759a79c47d"
+  integrity sha1-YV4Q4NQtadUX8lfJggShdZp5xH0=
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+    fs-extra "^8.1.0"
+    kebab-hash "^0.1.2"
+    lodash "^4.17.21"
+    webpack-assets-manifest "^5.0.5"
+
 gatsby-plugin-page-creator@^3.6.0:
   version "3.6.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-3.6.0.tgz#2f0d6163da25bc7d7564abd5208f051cf496bb8c"
@@ -5251,6 +5365,21 @@ gatsby-plugin-page-creator@^3.6.0:
     gatsby-telemetry "^2.6.0"
     globby "^11.0.3"
     lodash "^4.17.21"
+
+gatsby-plugin-react-helmet@^4.8.0:
+  version "4.8.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-4.8.0.tgz#1d8d90859f3f7bc44f1a6317e4450d999ca803c8"
+  integrity sha1-HY2QhZ8/e8RPGmMX5EUNmZyoA8g=
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+
+gatsby-plugin-routes@^1.0.1:
+  version "1.0.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gatsby-plugin-routes/-/gatsby-plugin-routes-1.0.1.tgz#97c0f11e478000b5d647b866719dfd100d79cc5e"
+  integrity sha1-l8DxHkeAALXWR7hmcZ39EA15zF4=
+  dependencies:
+    chokidar "^3.5.1"
+    core-js "^2.6.5"
 
 gatsby-plugin-sass@^4.4.0:
   version "4.6.0"
@@ -5352,6 +5481,25 @@ gatsby-recipes@^0.17.0:
     xstate "^4.9.1"
     yoga-layout-prebuilt "^1.9.6"
 
+gatsby-source-filesystem@^3.8.0:
+  version "3.8.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gatsby-source-filesystem/-/gatsby-source-filesystem-3.8.0.tgz#d434e3dc4c297851313d56135e1208d00aa3feac"
+  integrity sha1-1DTj3EwpeFExPVYTXhII0Aqj/qw=
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+    better-queue "^3.8.10"
+    chokidar "^3.4.3"
+    file-type "^16.0.0"
+    fs-extra "^8.1.0"
+    gatsby-core-utils "^2.8.0"
+    got "^9.6.0"
+    md5-file "^5.0.0"
+    mime "^2.4.6"
+    pretty-bytes "^5.4.1"
+    progress "^2.0.3"
+    valid-url "^1.0.9"
+    xstate "^4.14.0"
+
 gatsby-telemetry@^2.6.0:
   version "2.6.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gatsby-telemetry/-/gatsby-telemetry-2.6.0.tgz#6e18861d31769a46b797fd7d39cc322368fc71a8"
@@ -5371,6 +5519,34 @@ gatsby-telemetry@^2.6.0:
     lodash "^4.17.21"
     node-fetch "^2.6.1"
     uuid "3.4.0"
+
+gatsby-transformer-remark@^4.5.0:
+  version "4.5.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gatsby-transformer-remark/-/gatsby-transformer-remark-4.5.0.tgz#492b031a87acc65e66610e5da67f5dcc45f05297"
+  integrity sha1-SSsDGoesxl5mYQ5dpn9dzEXwUpc=
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+    gatsby-core-utils "^2.8.0"
+    gray-matter "^4.0.2"
+    hast-util-raw "^6.0.2"
+    hast-util-to-html "^7.1.2"
+    lodash "^4.17.21"
+    mdast-util-to-hast "^10.2.0"
+    mdast-util-to-string "^2.0.0"
+    mdast-util-toc "^5.1.0"
+    remark "^13.0.0"
+    remark-footnotes "^3.0.0"
+    remark-gfm "^1.0.0"
+    remark-parse "^9.0.0"
+    remark-retext "^4.0.0"
+    remark-stringify "^9.0.1"
+    retext-english "^3.0.4"
+    sanitize-html "^1.27.5"
+    underscore.string "^3.3.5"
+    unified "^9.2.1"
+    unist-util-remove-position "^3.0.0"
+    unist-util-select "^3.0.4"
+    unist-util-visit "^2.0.3"
 
 gatsby@^3.3.1:
   version "3.6.0"
@@ -5592,6 +5768,13 @@ git-up@^4.0.2:
     is-ssh "^1.3.0"
     parse-url "^5.0.0"
 
+github-slugger@^1.2.1:
+  version "1.3.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/github-slugger/-/github-slugger-1.3.0.tgz#9bd0a95c5efdfc46005e82a906ef8e2a059124c9"
+  integrity sha1-m9CpXF79/EYAXoKpBu+OKgWRJMk=
+  dependencies:
+    emoji-regex ">=6.0.0 <=6.1.1"
+
 glob-parent@^3.1.0:
   version "3.1.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/glob-parent/-/glob-parent-3.1.0.tgz#9e6af6299d8d3bd2bd40430832bd113df906c5ae"
@@ -5600,7 +5783,7 @@ glob-parent@^3.1.0:
     is-glob "^3.1.0"
     path-dirname "^1.0.0"
 
-glob-parent@^5.0.0, glob-parent@^5.1.0, glob-parent@~5.1.0:
+glob-parent@^5.0.0, glob-parent@^5.1.0, glob-parent@~5.1.0, glob-parent@~5.1.2:
   version "5.1.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
   integrity sha1-hpgyxYA0/mikCTwX3BXoNA2EAcQ=
@@ -5821,6 +6004,16 @@ graphql@^15.4.0:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/graphql/-/graphql-15.5.0.tgz#39d19494dbe69d1ea719915b578bf920344a69d5"
   integrity sha1-OdGUlNvmnR6nGZFbV4v5IDRKadU=
 
+gray-matter@^4.0.2:
+  version "4.0.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gray-matter/-/gray-matter-4.0.3.tgz#e893c064825de73ea1f5f7d88c7a9f7274288798"
+  integrity sha1-6JPAZIJd5z6h9ffYjHqfcnQoh5g=
+  dependencies:
+    js-yaml "^3.13.1"
+    kind-of "^6.0.2"
+    section-matter "^1.0.0"
+    strip-bom-string "^1.0.0"
+
 gzip-size@5.1.1:
   version "5.1.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/gzip-size/-/gzip-size-5.1.1.tgz#cb9bee692f87c0612b232840a873904e4c135274"
@@ -5922,6 +6115,101 @@ hasha@^5.2.0:
     is-stream "^2.0.0"
     type-fest "^0.8.0"
 
+hast-to-hyperscript@^9.0.0:
+  version "9.0.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hast-to-hyperscript/-/hast-to-hyperscript-9.0.1.tgz#9b67fd188e4c81e8ad66f803855334173920218d"
+  integrity sha1-m2f9GI5MgeitZvgDhVM0FzkgIY0=
+  dependencies:
+    "@types/unist" "^2.0.3"
+    comma-separated-tokens "^1.0.0"
+    property-information "^5.3.0"
+    space-separated-tokens "^1.0.0"
+    style-to-object "^0.3.0"
+    unist-util-is "^4.0.0"
+    web-namespaces "^1.0.0"
+
+hast-util-from-parse5@^6.0.0:
+  version "6.0.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hast-util-from-parse5/-/hast-util-from-parse5-6.0.1.tgz#554e34abdeea25ac76f5bd950a1f0180e0b3bc2a"
+  integrity sha1-VU40q97qJax29b2VCh8BgOCzvCo=
+  dependencies:
+    "@types/parse5" "^5.0.0"
+    hastscript "^6.0.0"
+    property-information "^5.0.0"
+    vfile "^4.0.0"
+    vfile-location "^3.2.0"
+    web-namespaces "^1.0.0"
+
+hast-util-is-element@^1.0.0:
+  version "1.1.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hast-util-is-element/-/hast-util-is-element-1.1.0.tgz#3b3ed5159a2707c6137b48637fbfe068e175a425"
+  integrity sha1-Oz7VFZonB8YTe0hjf7/gaOF1pCU=
+
+hast-util-parse-selector@^2.0.0:
+  version "2.2.5"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hast-util-parse-selector/-/hast-util-parse-selector-2.2.5.tgz#d57c23f4da16ae3c63b3b6ca4616683313499c3a"
+  integrity sha1-1Xwj9NoWrjxjs7bKRhZoMxNJnDo=
+
+hast-util-raw@^6.0.2:
+  version "6.1.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hast-util-raw/-/hast-util-raw-6.1.0.tgz#e16a3c2642f65cc7c480c165400a40d604ab75d0"
+  integrity sha1-4Wo8JkL2XMfEgMFlQApA1gSrddA=
+  dependencies:
+    "@types/hast" "^2.0.0"
+    hast-util-from-parse5 "^6.0.0"
+    hast-util-to-parse5 "^6.0.0"
+    html-void-elements "^1.0.0"
+    parse5 "^6.0.0"
+    unist-util-position "^3.0.0"
+    unist-util-visit "^2.0.0"
+    vfile "^4.0.0"
+    web-namespaces "^1.0.0"
+    xtend "^4.0.0"
+    zwitch "^1.0.0"
+
+hast-util-to-html@^7.1.2:
+  version "7.1.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hast-util-to-html/-/hast-util-to-html-7.1.3.tgz#9f339ca9bea71246e565fc79ff7dbfe98bb50f5e"
+  integrity sha1-nzOcqb6nEkblZfx5/32/6Yu1D14=
+  dependencies:
+    ccount "^1.0.0"
+    comma-separated-tokens "^1.0.0"
+    hast-util-is-element "^1.0.0"
+    hast-util-whitespace "^1.0.0"
+    html-void-elements "^1.0.0"
+    property-information "^5.0.0"
+    space-separated-tokens "^1.0.0"
+    stringify-entities "^3.0.1"
+    unist-util-is "^4.0.0"
+    xtend "^4.0.0"
+
+hast-util-to-parse5@^6.0.0:
+  version "6.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hast-util-to-parse5/-/hast-util-to-parse5-6.0.0.tgz#1ec44650b631d72952066cea9b1445df699f8479"
+  integrity sha1-HsRGULYx1ylSBmzqmxRF32mfhHk=
+  dependencies:
+    hast-to-hyperscript "^9.0.0"
+    property-information "^5.0.0"
+    web-namespaces "^1.0.0"
+    xtend "^4.0.0"
+    zwitch "^1.0.0"
+
+hast-util-whitespace@^1.0.0:
+  version "1.0.4"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hast-util-whitespace/-/hast-util-whitespace-1.0.4.tgz#e4fe77c4a9ae1cb2e6c25e02df0043d0164f6e41"
+  integrity sha1-5P53xKmuHLLmwl4C3wBD0BZPbkE=
+
+hastscript@^6.0.0:
+  version "6.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hastscript/-/hastscript-6.0.0.tgz#e8768d7eac56c3fdeac8a92830d58e811e5bf640"
+  integrity sha1-6HaNfqxWw/3qyKkoMNWOgR5b9kA=
+  dependencies:
+    "@types/hast" "^2.0.0"
+    comma-separated-tokens "^1.0.0"
+    hast-util-parse-selector "^2.0.0"
+    property-information "^5.0.0"
+    space-separated-tokens "^1.0.0"
+
 hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
@@ -5989,6 +6277,11 @@ html-entities@^2.1.0:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/html-entities/-/html-entities-2.3.2.tgz#760b404685cb1d794e4f4b744332e3b00dcfe488"
   integrity sha1-dgtARoXLHXlOT0t0QzLjsA3P5Ig=
 
+html-void-elements@^1.0.0:
+  version "1.0.5"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/html-void-elements/-/html-void-elements-1.0.5.tgz#ce9159494e86d95e45795b166c2021c2cfca4483"
+  integrity sha1-zpFZSU6G2V5FeVsWbCAhws/KRIM=
+
 htmlparser2@^3.10.1:
   version "3.10.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/htmlparser2/-/htmlparser2-3.10.1.tgz#bd679dc3f59897b6a34bb10749c855bb53a9392f"
@@ -6000,6 +6293,16 @@ htmlparser2@^3.10.1:
     entities "^1.1.1"
     inherits "^2.0.1"
     readable-stream "^3.1.1"
+
+htmlparser2@^4.1.0:
+  version "4.1.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/htmlparser2/-/htmlparser2-4.1.0.tgz#9a4ef161f2e4625ebf7dfbe6c0a2f52d18a59e78"
+  integrity sha1-mk7xYfLkYl6/ffvmwKL1LRilnng=
+  dependencies:
+    domelementtype "^2.0.1"
+    domhandler "^3.0.0"
+    domutils "^2.0.0"
+    entities "^2.0.0"
 
 http-cache-semantics@3.8.1:
   version "3.8.1"
@@ -6893,6 +7196,13 @@ jsonfile@^4.0.0:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
+kebab-hash@^0.1.2:
+  version "0.1.2"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/kebab-hash/-/kebab-hash-0.1.2.tgz#dfb7949ba34d8e70114ea7d83e266e5e2a4abaac"
+  integrity sha1-37eUm6NNjnARTqfYPiZuXipKuqw=
+  dependencies:
+    lodash.kebabcase "^4.1.1"
+
 keyv@3.0.0:
   version "3.0.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/keyv/-/keyv-3.0.0.tgz#44923ba39e68b12a7cec7df6c3268c031f2ef373"
@@ -7053,6 +7363,13 @@ lock@^1.0.0:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/lock/-/lock-1.1.0.tgz#53157499d1653b136ca66451071fca615703fa55"
   integrity sha1-UxV0mdFlOxNspmRRBx/KYVcD+lU=
 
+lockfile@^1.0:
+  version "1.0.4"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/lockfile/-/lockfile-1.0.4.tgz#07f819d25ae48f87e538e6578b6964a4981a5609"
+  integrity sha1-B/gZ0lrkj4flOOZXi2lkpJgaVgk=
+  dependencies:
+    signal-exit "^3.0.2"
+
 lodash-es@^4.17.21:
   version "4.17.21"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
@@ -7098,15 +7415,25 @@ lodash.foreach@^4.5.0:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
   integrity sha1-Gmo16s5AEoDH8G3d7DUWWrJ+PlM=
 
-lodash.get@^4:
+lodash.get@^4, lodash.get@^4.0:
   version "4.4.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
+lodash.has@^4.0:
+  version "4.5.2"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/lodash.has/-/lodash.has-4.5.2.tgz#d19f4dc1095058cccbe2b0cdf4ee0fe4aa37c862"
+  integrity sha1-0Z9NwQlQWMzL4rDN9O4P5Ko3yGI=
 
 lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
   integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
+
+lodash.kebabcase@^4.1.1:
+  version "4.1.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
+  integrity sha1-hImxyw0p/4gZXM7KRI/21swpXDY=
 
 lodash.map@^4.6.0:
   version "4.6.0"
@@ -7277,6 +7604,83 @@ mdast-util-compact@^2.0.0:
   dependencies:
     unist-util-visit "^2.0.0"
 
+mdast-util-definitions@^4.0.0:
+  version "4.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-definitions/-/mdast-util-definitions-4.0.0.tgz#c5c1a84db799173b4dcf7643cda999e440c24db2"
+  integrity sha1-xcGoTbeZFztNz3ZDzamZ5EDCTbI=
+  dependencies:
+    unist-util-visit "^2.0.0"
+
+mdast-util-find-and-replace@^1.1.0:
+  version "1.1.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-find-and-replace/-/mdast-util-find-and-replace-1.1.1.tgz#b7db1e873f96f66588c321f1363069abf607d1b5"
+  integrity sha1-t9sehz+W9mWIwyHxNjBpq/YH0bU=
+  dependencies:
+    escape-string-regexp "^4.0.0"
+    unist-util-is "^4.0.0"
+    unist-util-visit-parents "^3.0.0"
+
+mdast-util-footnote@^0.1.0:
+  version "0.1.7"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-footnote/-/mdast-util-footnote-0.1.7.tgz#4b226caeab4613a3362c144c94af0fdd6f7e0ef0"
+  integrity sha1-SyJsrqtGE6M2LBRMlK8P3W9+DvA=
+  dependencies:
+    mdast-util-to-markdown "^0.6.0"
+    micromark "~2.11.0"
+
+mdast-util-from-markdown@^0.8.0:
+  version "0.8.5"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-from-markdown/-/mdast-util-from-markdown-0.8.5.tgz#d1ef2ca42bc377ecb0463a987910dae89bd9a28c"
+  integrity sha1-0e8spCvDd+ywRjqYeRDa6JvZoow=
+  dependencies:
+    "@types/mdast" "^3.0.0"
+    mdast-util-to-string "^2.0.0"
+    micromark "~2.11.0"
+    parse-entities "^2.0.0"
+    unist-util-stringify-position "^2.0.0"
+
+mdast-util-gfm-autolink-literal@^0.1.0:
+  version "0.1.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-gfm-autolink-literal/-/mdast-util-gfm-autolink-literal-0.1.3.tgz#9c4ff399c5ddd2ece40bd3b13e5447d84e385fb7"
+  integrity sha1-nE/zmcXd0uzkC9OxPlRH2E44X7c=
+  dependencies:
+    ccount "^1.0.0"
+    mdast-util-find-and-replace "^1.1.0"
+    micromark "^2.11.3"
+
+mdast-util-gfm-strikethrough@^0.2.0:
+  version "0.2.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-gfm-strikethrough/-/mdast-util-gfm-strikethrough-0.2.3.tgz#45eea337b7fff0755a291844fbea79996c322890"
+  integrity sha1-Re6jN7f/8HVaKRhE++p5mWwyKJA=
+  dependencies:
+    mdast-util-to-markdown "^0.6.0"
+
+mdast-util-gfm-table@^0.1.0:
+  version "0.1.6"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-gfm-table/-/mdast-util-gfm-table-0.1.6.tgz#af05aeadc8e5ee004eeddfb324b2ad8c029b6ecf"
+  integrity sha1-rwWurcjl7gBO7d+zJLKtjAKbbs8=
+  dependencies:
+    markdown-table "^2.0.0"
+    mdast-util-to-markdown "~0.6.0"
+
+mdast-util-gfm-task-list-item@^0.1.0:
+  version "0.1.6"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-gfm-task-list-item/-/mdast-util-gfm-task-list-item-0.1.6.tgz#70c885e6b9f543ddd7e6b41f9703ee55b084af10"
+  integrity sha1-cMiF5rn1Q93X5rQflwPuVbCErxA=
+  dependencies:
+    mdast-util-to-markdown "~0.6.0"
+
+mdast-util-gfm@^0.1.0:
+  version "0.1.2"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-gfm/-/mdast-util-gfm-0.1.2.tgz#8ecddafe57d266540f6881f5c57ff19725bd351c"
+  integrity sha1-js3a/lfSZlQPaIH1xX/xlyW9NRw=
+  dependencies:
+    mdast-util-gfm-autolink-literal "^0.1.0"
+    mdast-util-gfm-strikethrough "^0.2.0"
+    mdast-util-gfm-table "^0.1.0"
+    mdast-util-gfm-task-list-item "^0.1.0"
+    mdast-util-to-markdown "^0.6.1"
+
 mdast-util-mdx-expression@~0.1.0:
   version "0.1.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-mdx-expression/-/mdast-util-mdx-expression-0.1.1.tgz#fa1a04a5ea6777b0e8db6c120adf03088595df95"
@@ -7311,7 +7715,21 @@ mdast-util-mdxjs-esm@~0.1.0:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-mdxjs-esm/-/mdast-util-mdxjs-esm-0.1.1.tgz#69134a0dad71a59a9e0e9cfdc0633dde31dff69a"
   integrity sha1-aRNKDa1xpZqeDpz9wGM93jHf9po=
 
-mdast-util-to-markdown@^0.6.0, mdast-util-to-markdown@^0.6.1:
+mdast-util-to-hast@^10.2.0:
+  version "10.2.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-to-hast/-/mdast-util-to-hast-10.2.0.tgz#61875526a017d8857b71abc9333942700b2d3604"
+  integrity sha1-YYdVJqAX2IV7cavJMzlCcAstNgQ=
+  dependencies:
+    "@types/mdast" "^3.0.0"
+    "@types/unist" "^2.0.0"
+    mdast-util-definitions "^4.0.0"
+    mdurl "^1.0.0"
+    unist-builder "^2.0.0"
+    unist-util-generated "^1.0.0"
+    unist-util-position "^3.0.0"
+    unist-util-visit "^2.0.0"
+
+mdast-util-to-markdown@^0.6.0, mdast-util-to-markdown@^0.6.1, mdast-util-to-markdown@~0.6.0:
   version "0.6.5"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-to-markdown/-/mdast-util-to-markdown-0.6.5.tgz#b33f67ca820d69e6cc527a93d4039249b504bebe"
   integrity sha1-sz9nyoINaebMUnqT1AOSSbUEvr4=
@@ -7323,15 +7741,43 @@ mdast-util-to-markdown@^0.6.0, mdast-util-to-markdown@^0.6.1:
     repeat-string "^1.0.0"
     zwitch "^1.0.0"
 
+mdast-util-to-nlcst@^4.0.0:
+  version "4.0.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-to-nlcst/-/mdast-util-to-nlcst-4.0.1.tgz#ff8b5339c960b38209273fa8bf4dd7a9498f8636"
+  integrity sha1-/4tTOclgs4IJJz+ov03XqUmPhjY=
+  dependencies:
+    nlcst-to-string "^2.0.0"
+    repeat-string "^1.0.0"
+    unist-util-position "^3.0.0"
+    vfile-location "^3.1.0"
+
 mdast-util-to-string@^2.0.0:
   version "2.0.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-to-string/-/mdast-util-to-string-2.0.0.tgz#b8cfe6a713e1091cb5b728fc48885a4767f8b97b"
   integrity sha1-uM/mpxPhCRy1tyj8SIhaR2f4uXs=
 
+mdast-util-toc@^5.1.0:
+  version "5.1.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdast-util-toc/-/mdast-util-toc-5.1.0.tgz#3af0f9c9a764b993538af03f1f79f4e3cec22736"
+  integrity sha1-OvD5yadkuZNTivA/H3n0487CJzY=
+  dependencies:
+    "@types/mdast" "^3.0.3"
+    "@types/unist" "^2.0.3"
+    extend "^3.0.2"
+    github-slugger "^1.2.1"
+    mdast-util-to-string "^2.0.0"
+    unist-util-is "^4.0.0"
+    unist-util-visit "^2.0.0"
+
 mdn-data@2.0.14:
   version "2.0.14"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
   integrity sha1-cRP8QoGRfWPOKbQ0RvcB5owlulA=
+
+mdurl@^1.0.0:
+  version "1.0.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
+  integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
 
 meant@^1.0.1, meant@^1.0.2:
   version "1.0.3"
@@ -7410,6 +7856,58 @@ microevent.ts@~0.1.1:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/microevent.ts/-/microevent.ts-0.1.1.tgz#70b09b83f43df5172d0205a63025bce0f7357fa0"
   integrity sha1-cLCbg/Q99RctAgWmMCW84Pc1f6A=
 
+micromark-extension-footnote@^0.3.0:
+  version "0.3.2"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/micromark-extension-footnote/-/micromark-extension-footnote-0.3.2.tgz#129b74ef4920ce96719b2c06102ee7abb2b88a20"
+  integrity sha1-Ept070kgzpZxmywGEC7nq7K4iiA=
+  dependencies:
+    micromark "~2.11.0"
+
+micromark-extension-gfm-autolink-literal@~0.5.0:
+  version "0.5.7"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/micromark-extension-gfm-autolink-literal/-/micromark-extension-gfm-autolink-literal-0.5.7.tgz#53866c1f0c7ef940ae7ca1f72c6faef8fed9f204"
+  integrity sha1-U4ZsHwx++UCufKH3LG+u+P7Z8gQ=
+  dependencies:
+    micromark "~2.11.3"
+
+micromark-extension-gfm-strikethrough@~0.6.5:
+  version "0.6.5"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/micromark-extension-gfm-strikethrough/-/micromark-extension-gfm-strikethrough-0.6.5.tgz#96cb83356ff87bf31670eefb7ad7bba73e6514d1"
+  integrity sha1-lsuDNW/4e/MWcO77ete7pz5lFNE=
+  dependencies:
+    micromark "~2.11.0"
+
+micromark-extension-gfm-table@~0.4.0:
+  version "0.4.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/micromark-extension-gfm-table/-/micromark-extension-gfm-table-0.4.3.tgz#4d49f1ce0ca84996c853880b9446698947f1802b"
+  integrity sha1-TUnxzgyoSZbIU4gLlEZpiUfxgCs=
+  dependencies:
+    micromark "~2.11.0"
+
+micromark-extension-gfm-tagfilter@~0.3.0:
+  version "0.3.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/micromark-extension-gfm-tagfilter/-/micromark-extension-gfm-tagfilter-0.3.0.tgz#d9f26a65adee984c9ccdd7e182220493562841ad"
+  integrity sha1-2fJqZa3umEyczdfhgiIEk1YoQa0=
+
+micromark-extension-gfm-task-list-item@~0.3.0:
+  version "0.3.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/micromark-extension-gfm-task-list-item/-/micromark-extension-gfm-task-list-item-0.3.3.tgz#d90c755f2533ed55a718129cee11257f136283b8"
+  integrity sha1-2Qx1XyUz7VWnGBKc7hElfxNig7g=
+  dependencies:
+    micromark "~2.11.0"
+
+micromark-extension-gfm@^0.3.0:
+  version "0.3.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/micromark-extension-gfm/-/micromark-extension-gfm-0.3.3.tgz#36d1a4c089ca8bdfd978c9bd2bf1a0cb24e2acfe"
+  integrity sha1-NtGkwInKi9/ZeMm9K/GgyyTirP4=
+  dependencies:
+    micromark "~2.11.0"
+    micromark-extension-gfm-autolink-literal "~0.5.0"
+    micromark-extension-gfm-strikethrough "~0.6.5"
+    micromark-extension-gfm-table "~0.4.0"
+    micromark-extension-gfm-tagfilter "~0.3.0"
+    micromark-extension-gfm-task-list-item "~0.3.0"
+
 micromark-extension-mdx-expression@^0.3.0, micromark-extension-mdx-expression@^0.3.2, micromark-extension-mdx-expression@~0.3.0:
   version "0.3.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/micromark-extension-mdx-expression/-/micromark-extension-mdx-expression-0.3.2.tgz#827592af50116110dc9ee27201a73c037e61aa27"
@@ -7465,7 +7963,7 @@ micromark-extension-mdxjs@^0.3.0:
     micromark-extension-mdx-md "~0.1.0"
     micromark-extension-mdxjs-esm "~0.3.0"
 
-micromark@~2.11.0:
+micromark@^2.11.3, micromark@~2.11.0, micromark@~2.11.3:
   version "2.11.4"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/micromark/-/micromark-2.11.4.tgz#d13436138eea826383e822449c9a5c50ee44665a"
   integrity sha1-0TQ2E47qgmOD6CJEnJpcUO5EZlo=
@@ -7719,6 +8217,11 @@ nice-try@^1.0.4:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha1-ozeKdpbOfSI+iPybdkvX7xCJ42Y=
 
+nlcst-to-string@^2.0.0:
+  version "2.0.4"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/nlcst-to-string/-/nlcst-to-string-2.0.4.tgz#9315dfab80882bbfd86ddf1b706f53622dc400cc"
+  integrity sha1-kxXfq4CIK7/Ybd8bcG9TYi3EAMw=
+
 no-case@^3.0.4:
   version "3.0.4"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/no-case/-/no-case-3.0.4.tgz#d361fd5c9800f558551a8369fc0dcd4662b6124d"
@@ -7805,6 +8308,11 @@ normalize-url@^4.1.0, normalize-url@^4.5.0:
   version "4.5.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/normalize-url/-/normalize-url-4.5.1.tgz#0dd90cf1288ee1d1313b87081c9a5932ee48518a"
   integrity sha1-DdkM8SiO4dExO4cIHJpZMu5IUYo=
+
+not@^0.1.0:
+  version "0.1.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/not/-/not-0.1.0.tgz#c9691c1746c55dcfbe54cbd8bd4ff041bc2b519d"
+  integrity sha1-yWkcF0bFXc++VMvYvU/wQbwrUZ0=
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -8145,6 +8653,16 @@ parent-module@^1.0.0:
   dependencies:
     callsites "^3.0.0"
 
+parse-english@^4.0.0:
+  version "4.2.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/parse-english/-/parse-english-4.2.0.tgz#037b68f34d1a1bdf3d33668b87791bdfc1f01e1e"
+  integrity sha1-A3to800aG989M2aLh3kb38HwHh4=
+  dependencies:
+    nlcst-to-string "^2.0.0"
+    parse-latin "^4.0.0"
+    unist-util-modify-children "^2.0.0"
+    unist-util-visit-children "^1.0.0"
+
 parse-entities@^1.1.0:
   version "1.2.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/parse-entities/-/parse-entities-1.2.2.tgz#c31bf0f653b6661354f8973559cb86dd1d5edf50"
@@ -8187,6 +8705,15 @@ parse-json@^5.0.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
+parse-latin@^4.0.0:
+  version "4.3.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/parse-latin/-/parse-latin-4.3.0.tgz#1a70fc5601743baa06c5f12253c334fc94b4a917"
+  integrity sha1-GnD8VgF0O6oGxfEiU8M0/JS0qRc=
+  dependencies:
+    nlcst-to-string "^2.0.0"
+    unist-util-modify-children "^2.0.0"
+    unist-util-visit-children "^1.0.0"
+
 parse-path@^4.0.0:
   version "4.0.3"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/parse-path/-/parse-path-4.0.3.tgz#82d81ec3e071dcc4ab49aa9f2c9c0b8966bb22bf"
@@ -8197,6 +8724,11 @@ parse-path@^4.0.0:
     qs "^6.9.4"
     query-string "^6.13.8"
 
+parse-srcset@^1.0.2:
+  version "1.0.2"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/parse-srcset/-/parse-srcset-1.0.2.tgz#f2bd221f6cc970a938d88556abc589caaaa2bde1"
+  integrity sha1-8r0iH2zJcKk42IVWq8WJyqqiveE=
+
 parse-url@^5.0.0:
   version "5.0.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/parse-url/-/parse-url-5.0.2.tgz#856a3be1fcdf78dc93fc8b3791f169072d898b59"
@@ -8206,6 +8738,11 @@ parse-url@^5.0.0:
     normalize-url "^3.3.0"
     parse-path "^4.0.0"
     protocols "^1.4.0"
+
+parse5@^6.0.0:
+  version "6.0.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
+  integrity sha1-4aHAhcVps9wIMhGE8Zo5zCf3wws=
 
 parseqs@0.0.6:
   version "0.0.6"
@@ -8683,6 +9220,15 @@ postcss@8.2.6:
     nanoid "^3.1.20"
     source-map "^0.6.1"
 
+postcss@^7.0.27:
+  version "7.0.36"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/postcss/-/postcss-7.0.36.tgz#056f8cffa939662a8f5905950c07d5285644dfcb"
+  integrity sha1-BW+M/6k5ZiqPWQWVDAfVKFZE38s=
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
 postcss@^8.2.15, postcss@^8.2.9:
   version "8.3.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/postcss/-/postcss-8.3.0.tgz#b1a713f6172ca427e3f05ef1303de8b65683325f"
@@ -8711,6 +9257,11 @@ prettier@^2.0.5:
   version "2.3.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
   integrity sha1-tqW/EoQCauZA8X9/9WWKdWf8DRg=
+
+pretty-bytes@^5.4.1:
+  version "5.6.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/pretty-bytes/-/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
+  integrity sha1-NWJW9kOAR3PIL2RyP+eMksYr6us=
 
 pretty-error@^2.1.1:
   version "2.1.2"
@@ -8778,6 +9329,13 @@ proper-lockfile@^4.1.1:
     graceful-fs "^4.2.4"
     retry "^0.12.0"
     signal-exit "^3.0.2"
+
+property-information@^5.0.0, property-information@^5.3.0:
+  version "5.6.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/property-information/-/property-information-5.6.0.tgz#61675545fb23002f245c6540ec46077d4da3ed69"
+  integrity sha1-YWdVRfsjAC8kXGVA7EYHfU2j7Wk=
+  dependencies:
+    xtend "^4.0.0"
 
 protobufjs@^6.8.6:
   version "6.11.2"
@@ -8996,6 +9554,21 @@ react-fast-compare@^2.0.1:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha1-6EtNRVsP7BE+BALDKTUnFRlvgfk=
 
+react-fast-compare@^3.1.1:
+  version "3.2.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
+  integrity sha1-ZBqdqBtqYyDycOiXJPtFoLOeQ7s=
+
+react-helmet@^6.1.0:
+  version "6.1.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/react-helmet/-/react-helmet-6.1.0.tgz#a750d5165cb13cf213e44747502652e794468726"
+  integrity sha1-p1DVFlyxPPIT5EdHUCZS55RGhyY=
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.7.2"
+    react-fast-compare "^3.1.1"
+    react-side-effect "^2.1.0"
+
 react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -9010,6 +9583,11 @@ react-refresh@^0.9.0:
   version "0.9.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/react-refresh/-/react-refresh-0.9.0.tgz#71863337adc3e5c2f8a6bfddd12ae3bfe32aafbf"
   integrity sha1-cYYzN63D5cL4pr/d0Srjv+Mqr78=
+
+react-side-effect@^2.1.0:
+  version "2.1.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/react-side-effect/-/react-side-effect-2.1.1.tgz#66c5701c3e7560ab4822a4ee2742dee215d72eb3"
+  integrity sha1-ZsVwHD51YKtIIqTuJ0Le4hXXLrM=
 
 react@^17.0.1:
   version "17.0.2"
@@ -9106,6 +9684,13 @@ readdirp@~3.5.0:
   version "3.5.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/readdirp/-/readdirp-3.5.0.tgz#9ba74c019b15d365278d2e91bb8c48d7b4d42c9e"
   integrity sha1-m6dMAZsV02UnjS6Ru4xI17TULJ4=
+  dependencies:
+    picomatch "^2.2.1"
+
+readdirp@~3.6.0:
+  version "3.6.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/readdirp/-/readdirp-3.6.0.tgz#74a370bd857116e245b29cc97340cd431a02a6c7"
+  integrity sha1-dKNwvYVxFuJFspzJc0DNQxoCpsc=
   dependencies:
     picomatch "^2.2.1"
 
@@ -9216,6 +9801,22 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
+remark-footnotes@^3.0.0:
+  version "3.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/remark-footnotes/-/remark-footnotes-3.0.0.tgz#5756b56f8464fa7ed80dbba0c966136305d8cb8d"
+  integrity sha1-V1a1b4Rk+n7YDbugyWYTYwXYy40=
+  dependencies:
+    mdast-util-footnote "^0.1.0"
+    micromark-extension-footnote "^0.3.0"
+
+remark-gfm@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/remark-gfm/-/remark-gfm-1.0.0.tgz#9213643001be3f277da6256464d56fd28c3b3c0d"
+  integrity sha1-khNkMAG+Pyd9piVkZNVv0ow7PA0=
+  dependencies:
+    mdast-util-gfm "^0.1.0"
+    micromark-extension-gfm "^0.3.0"
+
 remark-mdx@^2.0.0-next.4:
   version "2.0.0-next.9"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/remark-mdx/-/remark-mdx-2.0.0-next.9.tgz#3e2088550ddd4264ce48bca15fb297569d369e65"
@@ -9257,6 +9858,20 @@ remark-parse@^6.0.3:
     vfile-location "^2.0.0"
     xtend "^4.0.1"
 
+remark-parse@^9.0.0:
+  version "9.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/remark-parse/-/remark-parse-9.0.0.tgz#4d20a299665880e4f4af5d90b7c7b8a935853640"
+  integrity sha1-TSCimWZYgOT0r12Qt8e4qTWFNkA=
+  dependencies:
+    mdast-util-from-markdown "^0.8.0"
+
+remark-retext@^4.0.0:
+  version "4.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/remark-retext/-/remark-retext-4.0.0.tgz#255ed98ac3e0a68da5c6ba4f172299b8d062bb28"
+  integrity sha1-JV7ZisPgpo2lxrpPFyKZuNBiuyg=
+  dependencies:
+    mdast-util-to-nlcst "^4.0.0"
+
 remark-stringify@^8.1.0:
   version "8.1.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/remark-stringify/-/remark-stringify-8.1.1.tgz#e2a9dc7a7bf44e46a155ec78996db896780d8ce5"
@@ -9276,6 +9891,22 @@ remark-stringify@^8.1.0:
     stringify-entities "^3.0.0"
     unherit "^1.0.4"
     xtend "^4.0.1"
+
+remark-stringify@^9.0.0, remark-stringify@^9.0.1:
+  version "9.0.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/remark-stringify/-/remark-stringify-9.0.1.tgz#576d06e910548b0a7191a71f27b33f1218862894"
+  integrity sha1-V20G6RBUiwpxkacfJ7M/EhiGKJQ=
+  dependencies:
+    mdast-util-to-markdown "^0.6.0"
+
+remark@^13.0.0:
+  version "13.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/remark/-/remark-13.0.0.tgz#d15d9bf71a402f40287ebe36067b66d54868e425"
+  integrity sha1-0V2b9xpAL0Aofr42Bntm1Uho5CU=
+  dependencies:
+    remark-parse "^9.0.0"
+    remark-stringify "^9.0.0"
+    unified "^9.1.0"
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
@@ -9414,6 +10045,14 @@ ret@~0.1.10:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha1-uKSCXVvbH8P29Twrwz+BOIaBx7w=
 
+retext-english@^3.0.4:
+  version "3.0.4"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/retext-english/-/retext-english-3.0.4.tgz#f978828d51fbcee842bc3807a45b7f709822ea8d"
+  integrity sha1-+XiCjVH7zuhCvDgHpFt/cJgi6o0=
+  dependencies:
+    parse-english "^4.0.0"
+    unherit "^1.0.4"
+
 retry@^0.12.0:
   version "0.12.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
@@ -9502,6 +10141,16 @@ safe-regex@^1.1.0:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
 
+sanitize-html@^1.27.5:
+  version "1.27.5"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/sanitize-html/-/sanitize-html-1.27.5.tgz#6c8149462adb23e360e1bb71cc0bae7f08c823c7"
+  integrity sha1-bIFJRirbI+Ng4btxzAuufwjII8c=
+  dependencies:
+    htmlparser2 "^4.1.0"
+    lodash "^4.17.15"
+    parse-srcset "^1.0.2"
+    postcss "^7.0.27"
+
 sass-loader@^10.1.1:
   version "10.2.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/sass-loader/-/sass-loader-10.2.0.tgz#3d64c1590f911013b3fa48a0b22a83d5e1494716"
@@ -9546,7 +10195,7 @@ schema-utils@^2.6.5:
     ajv "^6.12.4"
     ajv-keywords "^3.5.2"
 
-schema-utils@^3.0.0:
+schema-utils@^3.0, schema-utils@^3.0.0:
   version "3.0.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/schema-utils/-/schema-utils-3.0.0.tgz#67502f6aa2b66a2d4032b4279a2944978a0913ef"
   integrity sha1-Z1AvaqK2ai1AMrQnmilEl4oJE+8=
@@ -9554,6 +10203,14 @@ schema-utils@^3.0.0:
     "@types/json-schema" "^7.0.6"
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
+
+section-matter@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/section-matter/-/section-matter-1.0.0.tgz#e9041953506780ec01d59f292a19c7b850b84167"
+  integrity sha1-6QQZU1BngOwB1Z8pKhnHuFC4QWc=
+  dependencies:
+    extend-shallow "^2.0.1"
+    kind-of "^6.0.0"
 
 select-hose@^2.0.0:
   version "2.0.0"
@@ -9910,6 +10567,11 @@ source-map@^0.5.0, source-map@^0.5.6:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
+space-separated-tokens@^1.0.0:
+  version "1.1.5"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/space-separated-tokens/-/space-separated-tokens-1.1.5.tgz#85f32c3d10d9682007e917414ddc5c26d1aa6899"
+  integrity sha1-hfMsPRDZaCAH6RdBTdxcJtGqaJk=
+
 spdx-correct@^3.0.0:
   version "3.1.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/spdx-correct/-/spdx-correct-3.1.1.tgz#dece81ac9c1e6713e5f7d1b6f17d468fa53d89a9"
@@ -9970,6 +10632,11 @@ split-string@^3.0.1, split-string@^3.0.2:
   integrity sha1-fLCd2jqGWFcFxks5pkZgOGguj+I=
   dependencies:
     extend-shallow "^3.0.0"
+
+sprintf-js@^1.0.3:
+  version "1.1.2"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/sprintf-js/-/sprintf-js-1.1.2.tgz#da1765262bf8c0f571749f2ad6c26300207ae673"
+  integrity sha1-2hdlJiv4wPVxdJ8q1sJjACB65nM=
 
 sprintf-js@~1.0.2:
   version "1.0.3"
@@ -10125,7 +10792,7 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
-stringify-entities@^3.0.0, stringify-entities@^3.1.0:
+stringify-entities@^3.0.0, stringify-entities@^3.0.1, stringify-entities@^3.1.0:
   version "3.1.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/stringify-entities/-/stringify-entities-3.1.0.tgz#b8d3feac256d9ffcc9fa1fefdcf3ca70576ee903"
   integrity sha1-uNP+rCVtn/zJ+h/v3PPKcFdu6QM=
@@ -10154,6 +10821,11 @@ strip-ansi@^5.0.0, strip-ansi@^5.1.0, strip-ansi@^5.2.0:
   integrity sha1-jJpTb+tq/JYr36WxBKUJHBrZwK4=
   dependencies:
     ansi-regex "^4.1.0"
+
+strip-bom-string@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/strip-bom-string/-/strip-bom-string-1.0.0.tgz#e5211e9224369fbb81d633a2f00044dc8cedad92"
+  integrity sha1-5SEekiQ2n7uB1jOi8ABE3IztrZI=
 
 strip-bom@^3.0.0:
   version "3.0.0"
@@ -10299,7 +10971,7 @@ tapable@^1.0.0:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
   integrity sha1-ofzMBrWNth/XpF2i2kT186Pme6I=
 
-tapable@^2.1.1, tapable@^2.2.0:
+tapable@^2.0, tapable@^2.1.1, tapable@^2.2.0:
   version "2.2.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/tapable/-/tapable-2.2.0.tgz#5c373d281d9c672848213d0e037d1c4165ab426b"
   integrity sha1-XDc9KB2cZyhIIT0OA30cQWWrQms=
@@ -10596,6 +11268,14 @@ unc-path-regex@^0.1.2:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
   integrity sha1-5z3T17DXxe2G+6xrCufYxqadUPo=
 
+underscore.string@^3.3.5:
+  version "3.3.5"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/underscore.string/-/underscore.string-3.3.5.tgz#fc2ad255b8bd309e239cbc5816fd23a9b7ea4023"
+  integrity sha1-/CrSVbi9MJ4jnLxYFv0jqbfqQCM=
+  dependencies:
+    sprintf-js "^1.0.3"
+    util-deprecate "^1.0.2"
+
 unherit@^1.0.4:
   version "1.1.3"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unherit/-/unherit-1.1.3.tgz#6c9b503f2b41b262330c80e91c8614abdaa69c22"
@@ -10638,6 +11318,18 @@ unified@^8.4.2:
     trough "^1.0.0"
     vfile "^4.0.0"
 
+unified@^9.1.0, unified@^9.2.1:
+  version "9.2.1"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unified/-/unified-9.2.1.tgz#ae18d5674c114021bfdbdf73865ca60f410215a3"
+  integrity sha1-rhjVZ0wRQCG/299zhlymD0ECFaM=
+  dependencies:
+    bail "^1.0.0"
+    extend "^3.0.0"
+    is-buffer "^2.0.0"
+    is-plain-obj "^2.0.0"
+    trough "^1.0.0"
+    vfile "^4.0.0"
+
 union-value@^1.0.0:
   version "1.0.1"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/union-value/-/union-value-1.0.1.tgz#0b6fe7b835aecda61c6ea4d4f02c14221e109847"
@@ -10660,6 +11352,16 @@ unique-string@^2.0.0:
   dependencies:
     crypto-random-string "^2.0.0"
 
+unist-builder@^2.0.0:
+  version "2.0.3"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-builder/-/unist-builder-2.0.3.tgz#77648711b5d86af0942f334397a33c5e91516436"
+  integrity sha1-d2SHEbXYavCULzNDl6M8XpFRZDY=
+
+unist-util-generated@^1.0.0:
+  version "1.1.6"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-util-generated/-/unist-util-generated-1.1.6.tgz#5ab51f689e2992a472beb1b35f2ce7ff2f324d4b"
+  integrity sha1-WrUfaJ4pkqRyvrGzXyzn/y8yTUs=
+
 unist-util-is@^3.0.0:
   version "3.0.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-util-is/-/unist-util-is-3.0.0.tgz#d9e84381c2468e82629e4a5be9d7d05a2dd324cd"
@@ -10669,6 +11371,18 @@ unist-util-is@^4.0.0:
   version "4.1.0"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-util-is/-/unist-util-is-4.1.0.tgz#976e5f462a7a5de73d94b706bac1b90671b57797"
   integrity sha1-l25fRip6Xec9lLcGusG5BnG1d5c=
+
+unist-util-modify-children@^2.0.0:
+  version "2.0.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-util-modify-children/-/unist-util-modify-children-2.0.0.tgz#9c9c30d4e32502aabb3fde10d7872a17c86801e2"
+  integrity sha1-nJww1OMlAqq7P94Q14cqF8hoAeI=
+  dependencies:
+    array-iterate "^1.0.0"
+
+unist-util-position@^3.0.0:
+  version "3.1.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-util-position/-/unist-util-position-3.1.0.tgz#1c42ee6301f8d52f47d14f62bbdb796571fa2d47"
+  integrity sha1-HELuYwH41S9H0U9iu9t5ZXH6LUc=
 
 unist-util-remove-position@^1.0.0:
   version "1.1.4"
@@ -10691,12 +11405,28 @@ unist-util-remove@^2.0.0:
   dependencies:
     unist-util-is "^4.0.0"
 
+unist-util-select@^3.0.4:
+  version "3.0.4"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-util-select/-/unist-util-select-3.0.4.tgz#702c9dc1db1b2bbbfe27f796fce99e43f25edc60"
+  integrity sha1-cCydwdsbK7v+J/eW/OmeQ/Je3GA=
+  dependencies:
+    css-selector-parser "^1.0.0"
+    not "^0.1.0"
+    nth-check "^2.0.0"
+    unist-util-is "^4.0.0"
+    zwitch "^1.0.0"
+
 unist-util-stringify-position@^2.0.0:
   version "2.0.3"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-util-stringify-position/-/unist-util-stringify-position-2.0.3.tgz#cce3bfa1cdf85ba7375d1d5b17bdc4cada9bd9da"
   integrity sha1-zOO/oc34W6c3XR1bF73Eytqb2do=
   dependencies:
     "@types/unist" "^2.0.2"
+
+unist-util-visit-children@^1.0.0:
+  version "1.1.4"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-util-visit-children/-/unist-util-visit-children-1.1.4.tgz#e8a087e58a33a2815f76ea1901c15dec2cb4b432"
+  integrity sha1-6KCH5YozooFfduoZAcFd7Cy0tDI=
 
 unist-util-visit-parents@^2.0.0:
   version "2.1.2"
@@ -10720,7 +11450,7 @@ unist-util-visit@^1.1.0:
   dependencies:
     unist-util-visit-parents "^2.0.0"
 
-unist-util-visit@^2.0.0, unist-util-visit@^2.0.2:
+unist-util-visit@^2.0.0, unist-util-visit@^2.0.2, unist-util-visit@^2.0.3:
   version "2.0.3"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/unist-util-visit/-/unist-util-visit-2.0.3.tgz#c3703893146df47203bb8a9795af47d7b971208c"
   integrity sha1-w3A4kxRt9HIDu4qXla9H17lxIIw=
@@ -10874,7 +11604,7 @@ v8-compile-cache@^2.0.3, v8-compile-cache@^2.2.0:
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha1-LeGWGMZtwkfc+2+ZM4A12CRaLO4=
 
-valid-url@1.0.9:
+valid-url@1.0.9, valid-url@^1.0.9:
   version "1.0.9"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/valid-url/-/valid-url-1.0.9.tgz#1c14479b40f1397a75782f115e4086447433a200"
   integrity sha1-HBRHm0DxOXp1eC8RXkCGRHQzogA=
@@ -10906,6 +11636,11 @@ vfile-location@^2.0.0:
   version "2.0.6"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/vfile-location/-/vfile-location-2.0.6.tgz#8a274f39411b8719ea5728802e10d9e0dff1519e"
   integrity sha1-iidPOUEbhxnqVyiALhDZ4N/xUZ4=
+
+vfile-location@^3.1.0, vfile-location@^3.2.0:
+  version "3.2.0"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/vfile-location/-/vfile-location-3.2.0.tgz#d8e41fbcbd406063669ebf6c33d56ae8721d0f3c"
+  integrity sha1-2OQfvL1AYGNmnr9sM9Vq6HIdDzw=
 
 vfile-message@^2.0.0:
   version "2.0.4"
@@ -10940,10 +11675,28 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
+web-namespaces@^1.0.0:
+  version "1.1.4"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/web-namespaces/-/web-namespaces-1.1.4.tgz#bc98a3de60dadd7faefc403d1076d529f5e030ec"
+  integrity sha1-vJij3mDa3X+u/EA9EHbVKfXgMOw=
+
 web-vitals@^1.1.2:
   version "1.1.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/web-vitals/-/web-vitals-1.1.2.tgz#06535308168986096239aa84716e68b4c6ae6d1c"
   integrity sha1-BlNTCBaJhgliOaqEcW5otMaubRw=
+
+webpack-assets-manifest@^5.0.5:
+  version "5.0.6"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/webpack-assets-manifest/-/webpack-assets-manifest-5.0.6.tgz#1fe7baf9b57f2d28ff09fcaef3d678cc15912b88"
+  integrity sha1-H+e6+bV/LSj/Cfyu89Z4zBWRK4g=
+  dependencies:
+    chalk "^4.0"
+    deepmerge "^4.0"
+    lockfile "^1.0"
+    lodash.get "^4.0"
+    lodash.has "^4.0"
+    schema-utils "^3.0"
+    tapable "^2.0"
 
 webpack-dev-middleware@^3.7.2:
   version "3.7.3"
@@ -11246,6 +11999,11 @@ xstate@^4.11.0, xstate@^4.9.1:
   version "4.19.2"
   resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/xstate/-/xstate-4.19.2.tgz#58ef6fc71737c76750ec61c5ff8b000101895d8a"
   integrity sha1-WO9vxxc3x2dQ7GHF/4sAAQGJXYo=
+
+xstate@^4.14.0:
+  version "4.20.2"
+  resolved "https://artifactory.workjam.com/artifactory/api/npm/npm/xstate/-/xstate-4.20.2.tgz#a22e6e63fc327b8d707494be3bf4897fb7890b37"
+  integrity sha1-oi5uY/wye41wdJS+O/SJf7eJCzc=
 
 xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.2"

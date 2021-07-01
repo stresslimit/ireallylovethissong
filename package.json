@@ -23,13 +23,19 @@
     "gatsby": "^3.3.1",
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-google-analytics": "^3.8.0",
+    "gatsby-plugin-netlify": "^3.8.0",
+    "gatsby-plugin-routes": "^1.0.1",
     "gatsby-plugin-sass": "^4.4.0",
+    "gatsby-source-filesystem": "^3.8.0",
+    "gatsby-transformer-remark": "^4.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.32.11"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "gatsby-plugin-react-helmet": "^4.8.0",
+    "prettier": "2.2.1",
+    "react-helmet": "^6.1.0"
   },
   "repository": {
     "type": "git",

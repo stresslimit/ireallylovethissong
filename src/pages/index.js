@@ -1,12 +1,13 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import { Formik, Form, Field } from 'formik';
-import emailjs from "emailjs-com"
+import { Helmet } from "react-helmet";
+import emailjs from "emailjs-com";
 import Tv from '../components/tv';
 import { CATEGORIES, CATEGORIES_IDS } from '../components/constants';
 import * as FirestoreService from '../firestoreService';
 import './styles.scss';
 
-const Home = () => {
+const IndexPage = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const sendEmail = (values, id) => {
     const templateParams = {
@@ -81,12 +82,15 @@ const Home = () => {
     }
     return error;
   }
-
   return (
     <>
-    
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>I really love this song</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="logo-tv"></div>
-      <Tv />
+      <Tv {...{ pathname: props.location.pathname.replace('/', '')}} />
       <section className="form">
         <div className="container">
         {isSubmitted && (
@@ -223,4 +227,6 @@ const Home = () => {
   )
 }
 
-export default Home;
+
+
+export default IndexPage;
