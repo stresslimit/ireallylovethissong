@@ -1,31 +1,33 @@
-import React, { useState } from "react";
-import { Formik, Form, Field } from 'formik';
-import { Helmet } from "react-helmet";
-import emailjs from "emailjs-com";
-import Tv from '../components/tv';
-import { CATEGORIES, CATEGORIES_IDS } from '../components/constants';
-import * as FirestoreService from '../firestoreService';
-import './styles.scss';
+import React, { useState } from "react"
+import { Formik, Form, Field } from "formik"
+import { Helmet } from "react-helmet"
+import emailjs from "emailjs-com"
+import Tv from "../components/tv"
+import { CATEGORIES, CATEGORIES_IDS } from "../components/constants"
+import * as FirestoreService from "../firestoreService"
+import "./styles.scss"
 
-const IndexPage = (props) => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+const IndexPage = props => {
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const sendEmail = (values, id) => {
     const templateParams = {
-      from_name: 'Slow Factory',
-      to_name: 'you',
-      subject: 'subject',
+      from_name: "Slow Factory",
+      to_name: "you",
+      subject: "subject",
       message: `Video link: ${values.url},
         Firebase new entry link: https://console.firebase.google.com/u/0/project/i-really-love-this-song/firestore/data/~2Fvideos~2F${id}
       `,
     }
 
-    emailjs.send(
-      'service_8znwq5p',
-      'template_82lc1pj',
-      templateParams,
-      'user_ZhAiL6q9oUY9NIq56na11'
-    ).then(
+    emailjs
+      .send(
+        "service_8znwq5p",
+        "template_82lc1pj",
+        templateParams,
+        "user_ZhAiL6q9oUY9NIq56na11"
+      )
+      .then(
         result => {
           // console.log(result.text)
         },
@@ -35,53 +37,57 @@ const IndexPage = (props) => {
       )
   }
 
-  const onSubmit = (values) => {
+  const onSubmit = values => {
     setTimeout(() => {
       FirestoreService.addVideo({
         ...values,
         active: false,
-        videoId: values.url.match(/youtu(?:.*\/v\/|.*v\=|\.be\/)([A-Za-z0-9_\-]{11})/)[1],
+        videoId: values.url.match(
+          /youtu(?:.*\/v\/|.*v\=|\.be\/)([A-Za-z0-9_\-]{11})/
+        )[1],
       })
         .then(docRef => {
-          sendEmail(values, docRef.id);
-          setIsSubmitted(true);
+          sendEmail(values, docRef.id)
+          setIsSubmitted(true)
         })
-        .catch(reason => console.log(reason));
-    }, 500);
+        .catch(reason => console.log(reason))
+    }, 500)
   }
 
-  const validateVideoUrl = (value) => {
-    let error;
+  const validateVideoUrl = value => {
+    let error
     if (!value) {
-      error = 'Required';
-    } else if (!/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/.test(value)) {
-      error = 'Invalid video url';
+      error = "Required"
+    } else if (
+      !/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/.test(value)
+    ) {
+      error = "Invalid video url"
     }
-    return error;
+    return error
   }
 
-  const validateAuthor = (value) => {
-    let error;
+  const validateAuthor = value => {
+    let error
     if (!value) {
-      error = 'Required';
+      error = "Required"
     }
-    return error;
+    return error
   }
 
-  const validateEmail = (value) => {
-    let error;
+  const validateEmail = value => {
+    let error
     if (!value) {
-      error = 'Required';
+      error = "Required"
     }
-    return error;
+    return error
   }
 
-  const validatePrompt = (value) => {
-    let error;
+  const validatePrompt = value => {
+    let error
     if (!value) {
-      error = 'Required';
+      error = "Required"
     }
-    return error;
+    return error
   }
   return (
     <>
@@ -91,23 +97,24 @@ const IndexPage = (props) => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <div className="logo-tv"></div>
-      <Tv {...{ pathname: props.location.pathname.replace('/', '')}} />
+      <Tv {...{ pathname: props.location.pathname.replace("/", "") }} />
       <section className="form">
         <div className="container">
-        {isSubmitted && (
-          <h2>Thank you for submitting your video.</h2>
-        )}
-        {!isSubmitted && (
+          {isSubmitted && <h2>Thank you for submitting your video.</h2>}
+          {!isSubmitted && (
             <>
-              <h2>Create your own video and submit it here for a chance to see it live on the site</h2>
+              <h2>
+                Create your own video and submit it here for a chance to see it
+                live on the site
+              </h2>
               {/* <p>Create your own video and submit it here for a chance to see it live on the site</p> */}
-              <br/>
-              <br/>
+              <br />
+              <br />
               <Formik
                 initialValues={{
-                  url: '',
-                  author: '',
-                  prompt: ''
+                  url: "",
+                  author: "",
+                  prompt: "",
                 }}
                 onSubmit={onSubmit}
               >
@@ -138,41 +145,40 @@ const IndexPage = (props) => {
                             ))}
                           </Field>
                           <div className="error">
-                            {errors.prompt && touched.prompt && <div>{errors.prompt}</div>}
+                            {errors.prompt && touched.prompt && (
+                              <div>{errors.prompt}</div>
+                            )}
                           </div>
                         </div>
                         <div className="field">
                           <label htmlFor="url">Video url *</label>
-                          <Field
-                            name="url"
-                            validate={validateVideoUrl}
-                          />
+                          <Field name="url" validate={validateVideoUrl} />
                           <div className="error">
-                            {errors.url && touched.url && <div>{errors.url}</div>}
+                            {errors.url && touched.url && (
+                              <div>{errors.url}</div>
+                            )}
                           </div>
                         </div>
                       </div>
                       <div className="row">
                         <div className="field">
                           <label htmlFor="email">Author *</label>
-                          <Field
-                            name="author"
-                            validate={validateAuthor}
-                          />
+                          <Field name="author" validate={validateAuthor} />
                           <div className="error">
-                            {errors.author && touched.author && <div>{errors.author}</div>}
+                            {errors.author && touched.author && (
+                              <div>{errors.author}</div>
+                            )}
                           </div>
                         </div>
                       </div>
                       <div className="row">
                         <div className="field">
                           <label htmlFor="email">Email *</label>
-                          <Field
-                            name="email"
-                            validate={validateEmail}
-                          />
+                          <Field name="email" validate={validateEmail} />
                           <div className="error">
-                            {errors.email && touched.email && <div>{errors.email}</div>}
+                            {errors.email && touched.email && (
+                              <div>{errors.email}</div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -184,7 +190,45 @@ const IndexPage = (props) => {
                 }}
               </Formik>
             </>
-        )}
+          )}
+        </div>
+      </section>
+      <section className="moma">
+        <div className="container">
+          <div style={{ width: "50%", paddingRight: "4rem" }}>
+            <h1 style={{ fontWeight: 700, paddingBottom: "1rem" }}>
+              SLOW FACTORY X MOMA PS1
+            </h1>
+            <h2
+              style={{ fontSize: "4rem", fontWeight: 700, lineHeight: "4rem" }}
+            >
+              The revolution is a school
+            </h2>
+            <p style={{ fontSize: "2rem" }}>
+              Slow factory x moma ps1Visit I Really Love This Song IRL at MOMA
+              PS1 Homeroom from January 22 - April 23, 2022.
+            </p>
+          </div>
+          <div
+            style={{
+              width: "50%",
+              paddingLeft: "4rem",
+              borderLeft: "2px solid black",
+            }}
+          >
+            <p>
+              Homeroom amplifies and celebrates the work of collectives,
+              organizations, artists, and activists that are connected to MoMA
+              PS'1 public programming and community allyship initiatives.For a
+              chance to be features in the activation, take inspiration from one
+              of the prompts above and submit a
+            </p>
+            <p style={{ paddingTop: "2rem" }}>
+              <a href="https://slowfactory.earth/moma-ps1">
+                Learn more on MoMA PS1
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -197,30 +241,75 @@ const IndexPage = (props) => {
             </div>
             <div className="content">
               <div className="side">
-                <p>We are here for the revolution. We are here to amplify the movement. Every revolution and every movement is dependent on the works and <span className="purple">curious minds of creatives, innovators, artists, and boundary pushers; their pain, their cries, their anger and ultimately, their commitment to their hope and joy for a better tomorrow.</span></p>
-                <p>We are here to celebrate the empathetic beauty of storytellers, those who have chosen to tell their own stories as well as interpret the narratives of those <span className="red">who have been silenced</span>. We are here to encourage creation and to hold space for the brilliant minds who have inspired us to move forward even when some of us have grown weary.</p>
+                <p>
+                  We are here for the revolution. We are here to amplify the
+                  movement. Every revolution and every movement is dependent on
+                  the works and{" "}
+                  <span className="purple">
+                    curious minds of creatives, innovators, artists, and
+                    boundary pushers; their pain, their cries, their anger and
+                    ultimately, their commitment to their hope and joy for a
+                    better tomorrow.
+                  </span>
+                </p>
+                <p>
+                  We are here to celebrate the empathetic beauty of
+                  storytellers, those who have chosen to tell their own stories
+                  as well as interpret the narratives of those{" "}
+                  <span className="red">who have been silenced</span>. We are
+                  here to encourage creation and to hold space for the brilliant
+                  minds who have inspired us to move forward even when some of
+                  us have grown weary.
+                </p>
               </div>
-              <p>These are the minds that have shaped our context and understanding of our past and our present, and will shape our future. I REALLY LOVE THIS SONG is a platform to hold our collective love and protection for the Earth and her children. I REALLY LOVE THIS SONG is only some of the beautiful faces and brains of the revolution.</p>
+              <p>
+                These are the minds that have shaped our context and
+                understanding of our past and our present, and will shape our
+                future. I REALLY LOVE THIS SONG is a platform to hold our
+                collective love and protection for the Earth and her children. I
+                REALLY LOVE THIS SONG is only some of the beautiful faces and
+                brains of the revolution.
+              </p>
             </div>
-            <p className="last">But we promise you, the movement is you and everyone. We are here for the revolution. </p>
+            <p className="last">
+              But we promise you, the movement is you and everyone. We are here
+              for the revolution.{" "}
+            </p>
           </div>
         </div>
       </section>
 
       <section className="sponsor">
         <div className="container">
-          <p><img src="IRLTS_presented_powered_logos_white.png" alt="Presented by Slow Factory and powered with Runa" /></p>
-          <br/>
-          <br/>
-          <p>RUNA is a clean energy drink that sources exclusively from farming families that grow guayusa (gwhy-you-sa) in sustainable, biodiverse forest gardens in the Amazon rainforest. Runa means “Fully Alive,” and is dedicated to bringing our good energy to life through action and through our products. RUNA provides a sustainable regenerative system for the communities that live, work and protect the rainforest. They use only natural ingredients certified by USDA Organic, Fair Trade™, and B-Corp.</p>
-          <br/>
+          <p>
+            <img
+              src="IRLTS_presented_powered_logos_white.png"
+              alt="Presented by Slow Factory and powered with Runa"
+            />
+          </p>
+          <br />
+          <br />
+          <p>
+            RUNA is a clean energy drink that sources exclusively from farming
+            families that grow guayusa (gwhy-you-sa) in sustainable, biodiverse
+            forest gardens in the Amazon rainforest. Runa means “Fully Alive,”
+            and is dedicated to bringing our good energy to life through action
+            and through our products. RUNA provides a sustainable regenerative
+            system for the communities that live, work and protect the
+            rainforest. They use only natural ingredients certified by USDA
+            Organic, Fair Trade™, and B-Corp.
+          </p>
+          <br />
           <p>Media partner</p>
           <img src="logo-dazed.png" className="dazed" />
         </div>
       </section>
 
       <section className="footer">
-        Press inquiries: <a href="mailto:press@ireallylovethissong.com">press@ireallylovethissong.com</a>
+        Press inquiries:{" "}
+        <a href="mailto:press@ireallylovethissong.com">
+          press@ireallylovethissong.com
+        </a>
         <strong>A public service</strong>
         Climate & Culture
       </section>
@@ -228,6 +317,4 @@ const IndexPage = (props) => {
   )
 }
 
-
-
-export default IndexPage;
+export default IndexPage
