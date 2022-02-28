@@ -195,7 +195,7 @@ const IndexPage = props => {
       </section>
       <section className="moma">
         <div className="container">
-          <div style={{ width: "50%", paddingRight: "4rem" }}>
+          <div className="part1">
             <h1 style={{ fontWeight: 700, paddingBottom: "1rem" }}>
               SLOW FACTORY X MOMA PS1
             </h1>
@@ -209,13 +209,7 @@ const IndexPage = props => {
               PS1 Homeroom from January 22 - April 23, 2022.
             </p>
           </div>
-          <div
-            style={{
-              width: "50%",
-              paddingLeft: "4rem",
-              borderLeft: "2px solid black",
-            }}
-          >
+          <div className="part2">
             <p>
               Homeroom amplifies and celebrates the work of collectives,
               organizations, artists, and activists that are connected to MoMA

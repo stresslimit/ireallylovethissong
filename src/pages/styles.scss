@@ -280,16 +280,30 @@ li {
   background-color: #cfe2e2;
   color: black;
   padding: 4rem 0;
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
   a {
     background: black;
     color: white;
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 0.25rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .moma {
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    .part1 {
+      width: 50%;
+      padding-right: 4rem;
+    }
+    .part2 {
+      width: 50%;
+      padding-left: 4rem;
+      border-left: 2px solid black;
+    }
   }
 }
