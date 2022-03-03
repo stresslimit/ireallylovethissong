@@ -3,26 +3,29 @@
   // src: url('../../fonts/AvantGardBldCnd.woff2') format('woff2'), url('../../fonts/AvantGardBldCnd.woff') format('woff');
 }
 
-body, html{
+body,
+html {
   width: 100%;
   height: 100%;
-  padding:0;
+  padding: 0;
   margin: 0;
   font-family: Helvetica, sans-serif;
   background-color: #222020;
   color: white;
 }
-h1,h2,h3{
+h1,
+h2,
+h3 {
   // font-family: AvantGarde, Helvetica, sans-serif;
   font-weight: normal;
   margin: 0;
   padding: 0;
 }
-h2{
+h2 {
   font-size: 2rem;
   padding-bottom: 2rem;
 }
-p{
+p {
   margin: 0;
   font-size: 1.5rem;
   line-height: 3rem;
@@ -31,68 +34,68 @@ img {
   max-width: 100%;
 }
 #___gatsby,
-#gatsby-focus-wrapper{
+#gatsby-focus-wrapper {
   width: 100%;
   height: 100%;
 }
 
-ul, li{
-  padding:0;
+ul,
+li {
+  padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.container{
+.container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-@media (min-width: 1000px){
-  .container{
+@media (min-width: 1000px) {
+  .container {
     padding: 0 3rem;
   }
 }
 
 @media (min-width: 700px) and (orientation: landscape) {
-  .logo-tv{
+  .logo-tv {
     // background: url('../../static/logo_video.png') 0 0 no-repeat;
     width: 95px;
     height: 90px;
-    position:absolute;
+    position: absolute;
     top: 73px;
     left: 31px;
     z-index: 10;
   }
 }
 
-
-.form{
+.form {
   color: #000;
   background-color: #fff;
   padding: 4rem 0;
   text-align: center;
-  img{
+  img {
     max-width: 500px;
     width: 100%;
   }
-  .row{
+  .row {
     width: 100%;
     text-align: left;
   }
-  .field{
+  .field {
     padding: 1rem 0;
-    .error{
-      color:red;
+    .error {
+      color: red;
       padding: 5px 0 5px 40%;
       height: 20px;
     }
   }
-  h2{
+  h2 {
     font-weight: bold;
     margin-bottom: 2rem;
   }
-  label{
+  label {
     font-size: 20px;
     font-weight: bold;
     width: 40%;
@@ -100,13 +103,13 @@ ul, li{
   }
 
   input,
-  select{
+  select {
     font-size: 20px;
     width: 50%;
     border: 0;
-    border-bottom: 4px solid black ;
+    border-bottom: 4px solid black;
   }
-  button{
+  button {
     border: 1px solid black;
     font-size: 18px;
     font-weight: bold;
@@ -118,46 +121,46 @@ ul, li{
     margin: 2rem auto;
     cursor: pointer;
     background-color: black;
-    color:white;
+    color: white;
     border: 0;
     position: relative;
-    &:hover{
+    &:hover {
       top: -2px;
     }
   }
 }
 
 @media (min-width: 700px) and (orientation: landscape) {
-  .form{
-    h2{
+  .form {
+    h2 {
       font-size: 48px;
     }
   }
 }
 
-.about{
-  background-color: #ED1C24;
-  color:white;
+.about {
+  background-color: #ed1c24;
+  color: white;
   padding: 2rem;
-  .logo{
+  .logo {
     width: 100%;
     max-width: 377px;
     margin: 0 auto;
-    img{
+    img {
       width: 100%;
     }
   }
-  .all-of-the-above{
+  .all-of-the-above {
     width: 100%;
     margin: 0 auto;
     max-width: 700px;
     height: 35px;
     margin-top: 2rem;
-    img{
+    img {
       width: 100%;
     }
   }
-  .content{
+  .content {
     font-size: 1rem;
     line-height: 1.5rem;
     margin-top: 2rem;
@@ -165,19 +168,19 @@ ul, li{
 }
 
 @media (min-width: 700px) and (orientation: landscape) {
-  .about{
+  .about {
     padding: 180px 0;
-    .all-of-the-above{
+    .all-of-the-above {
       width: 769px;
       height: 75px;
       margin-top: 150px;
     }
-    .content{
+    .content {
       padding-top: 90px;
       font-size: 24px;
       line-height: 36px;
       display: flex;
-      p{
+      p {
         max-width: 50%;
         padding: 0 10px;
       }
@@ -185,47 +188,46 @@ ul, li{
   }
 }
 
-
-.top{
+.top {
   background-color: #222020;
   padding: 6rem 1rem;
   font-size: 2rem;
   line-height: 3.5rem;
   color: white;
   font-weight: bold;
-  .headline{
+  .headline {
     display: flex;
     justify-content: space-between;
   }
-  h2{
+  h2 {
     font-size: 46px;
     font-weight: bold;
   }
-  .line{
+  .line {
     height: 3px;
     background-color: white;
     width: 60%;
     margin-top: 30px;
     padding-left: 10%;
   }
-  .side{
-    padding-bottom:4rem;
+  .side {
+    padding-bottom: 4rem;
   }
-  .content{
+  .content {
     border-bottom: 3px solid white;
     padding-bottom: 5rem;
     margin-bottom: 5rem;
   }
-  .last{
+  .last {
     font-size: 36px;
   }
-  .purple{
-    background-color: #49348C;
+  .purple {
+    background-color: #49348c;
   }
-  .red{
-    background-color: #DC3932;
+  .red {
+    background-color: #dc3932;
   }
-  img{
+  img {
     margin: 0 auto 4rem;
     display: block;
     max-width: 450px;
@@ -233,38 +235,75 @@ ul, li{
   }
 }
 
-@media (min-width: 1000px){
-  .side{
+@media (min-width: 1000px) {
+  .side {
     display: flex;
     justify-content: space-between;
-    padding-bottom:4rem;
-    p{
+    padding-bottom: 4rem;
+    p {
       width: 40%;
     }
   }
 }
 
-.sponsor{
+.sponsor {
   padding: 6rem 1rem;
   background-color: #fff;
-  background: url('../../static/gradient.png') center center no-repeat;
+  background: url("../../static/gradient.png") center center no-repeat;
   background-size: cover;
   text-align: center;
-  h2{
+  h2 {
     font-size: 48px;
     font-weight: bold;
   }
-  .dazed{
+  .dazed {
     max-width: 200px;
   }
 }
 
-.footer{
+.footer {
   background-color: #222020;
   padding: 4rem 0;
   color: white;
   text-align: center;
   font-size: 20px;
-  strong{ padding: 4rem 0 .5rem ;display: block; }
-  a{ color: white; }
+  strong {
+    padding: 4rem 0 0.5rem;
+    display: block;
+  }
+  a {
+    color: white;
+  }
+}
+
+.moma {
+  background-color: #cfe2e2;
+  color: black;
+  padding: 4rem 0;
+  a {
+    background: black;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .moma {
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    .part1 {
+      width: 50%;
+      padding-right: 4rem;
+    }
+    .part2 {
+      width: 50%;
+      padding-left: 4rem;
+      border-left: 2px solid black;
+    }
+  }
 }

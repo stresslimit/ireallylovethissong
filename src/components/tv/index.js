@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import YouTube from '@u-wave/react-youtube';
-// import { navigate } from "gatsby"
-import { navigate } from "@reach/router"  
+import { Link } from "@reach/router"  
 import * as FirestoreService from '../../firestoreService';
 import Playlist from '../playlist';
 import { CATEGORIES } from '../constants';
@@ -9,17 +8,18 @@ import menuIcon from '../../../static/icon-menu.svg';
 import './tv.scss';
 
 const Tv = ({ pathname }) => {
+  const defaultVideoInfos = {
+    id: '',
+    title: '',
+    categoryName: '',
+    videoId: '',
+  };
   const [videos, setVideos] = useState([]);
   const [videoSlug, setVideoSlug] = useState(pathname);
   const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
   const [isLanding, setIsLanding] = useState(true);
   const [imageArray, setImageArray] = useState([]);
-  const [videoInfos, setVideoInfos] = useState({
-    id: '',
-    title: '',
-    categoryName: '',
-    videoId: '',
-  });
+  const [videoInfos, setVideoInfos] = useState(defaultVideoInfos);
 
   useEffect(() => {
     FirestoreService.getVideos()
@@ -41,9 +41,14 @@ const Tv = ({ pathname }) => {
   }, [pathname]);
 
   useEffect(() => {
+    console.log(videos.length, videoSlug)
     if (videos.length && videoSlug){
       loadVideo(videos.find(x => x.videoId === videoSlug))
+    } else if (videos.length && !videoSlug) {
+      setIsLanding(true);
+      setVideoInfos(defaultVideoInfos);
     }
+   
   }, [videos, videoSlug]);
 
 
@@ -60,9 +65,6 @@ const Tv = ({ pathname }) => {
       categoryName: CATEGORIES[videoInfos.prompt].name,
       ...videoInfos
     });
-
-    // Update url
-    navigate(`/${videoInfos.videoId}`)
   }
 
   const onEnd = () => {
@@ -156,13 +158,13 @@ const Tv = ({ pathname }) => {
           </div>
           <div className="mosaic">
             {imageArray.map((item, index) => (
-              <button
+              <Link
                 key={index}
                 style={{
                   left: item.x,
                   top: item.y,
                 }}
-                onClick={() => loadVideo(item)}
+                to={`/${item.videoId}`}
               >
                 {item.videoId && (
                   <img
@@ -174,7 +176,7 @@ const Tv = ({ pathname }) => {
                     }}
                   />
                 )}
-              </button>
+              </Link>
             ))}
           </div>
         </div>
