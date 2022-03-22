@@ -213,9 +213,11 @@ const IndexPage = props => {
             <p>
               Homeroom amplifies and celebrates the work of collectives,
               organizations, artists, and activists that are connected to MoMA
-              PS'1 public programming and community allyship initiatives.For a
-              chance to be features in the activation, take inspiration from one
-              of the prompts above and submit a
+              PS1’s public programming and community allyship initiatives.
+            </p>
+            <p>
+              For a chance to be featured in the activation, take inspiration
+              from one of the prompts above and submit a video.
             </p>
             <p style={{ paddingTop: "2rem" }}>
               <a href="https://slowfactory.earth/moma-ps1">
