@@ -193,41 +193,6 @@ const IndexPage = props => {
           )}
         </div>
       </section>
-      <section className="moma">
-        <div className="container">
-          <div className="part1">
-            <h1 style={{ fontWeight: 700, paddingBottom: "1rem" }}>
-              SLOW FACTORY X MOMA PS1
-            </h1>
-            <h2
-              style={{ fontSize: "4rem", fontWeight: 700, lineHeight: "4rem" }}
-            >
-              The revolution is a school
-            </h2>
-            <p style={{ fontSize: "2rem" }}>
-              Slow factory x moma ps1Visit I Really Love This Song IRL at MOMA
-              PS1 Homeroom from January 22 - April 23, 2022.
-            </p>
-          </div>
-          <div className="part2">
-            <p>
-              Homeroom amplifies and celebrates the work of collectives,
-              organizations, artists, and activists that are connected to MoMA
-              PS1’s public programming and community allyship initiatives.
-            </p>
-            <p>
-              For a chance to be featured in the activation, take inspiration
-              from one of the prompts above and submit a video.
-            </p>
-            <p style={{ paddingTop: "2rem" }}>
-              <a href="https://slowfactory.earth/moma-ps1">
-                Learn more on MoMA PS1
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="top">
         <div className="manifesto">
           <div className="container">
